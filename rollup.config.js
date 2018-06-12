@@ -5,7 +5,7 @@ import minify from 'rollup-plugin-babel-minify';
 export default {
   input: '.tmp/main.js',
   output: {
-    file: 'assets/main.js',
+    file: 'dist/assets/main.js',
     format: 'iife',
     name: 'main',
     strict: false,

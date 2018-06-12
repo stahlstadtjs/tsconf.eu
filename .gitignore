@@ -2,3 +2,4 @@
 assets/main.js
 node_modules
 .DS_Store
+dist

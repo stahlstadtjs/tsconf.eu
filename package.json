@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "rimraf": "rm -rf dist .tmp",
+    "copy": "cp src/assets/*.json dist/assets && cp src/index.html dist/index.html",
     "bundle": "rollup --config rollup.config.js",
     "tsc": "tsc",
-    "build": "npm run tsc && npm run bundle"
+    "build": "npm run rimraf && npm run tsc && npm run bundle && npm run copy"
   },
   "author": "",
   "license": "ISC",
