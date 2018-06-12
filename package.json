@@ -19,5 +19,8 @@
     "rollup-plugin-commonjs": "^9.1.3",
     "rollup-plugin-node-resolve": "^3.3.0",
     "typescript": "^2.9.1"
+  },
+  "dependencies": {
+    "particles.js": "^2.0.0"
   }
 }

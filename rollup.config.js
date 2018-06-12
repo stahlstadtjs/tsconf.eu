@@ -3,7 +3,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import minify from 'rollup-plugin-babel-minify';
 
 export default {
-  input: '.tmp/main.js',
+  input: '.tmp/assets/main.js',
   output: {
     file: 'dist/assets/main.js',
     format: 'iife',
