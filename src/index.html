@@ -8,6 +8,7 @@
     body {
       margin: 0;
       background-color: #007ACC;
+      font-family: sans-serif;
     }
 
     #logo {
@@ -17,9 +18,63 @@
       right: 20px;
       bottom: 20px;
     }
+
+    .newsletter {
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mail-subscribe-form {
+      color: #007aac;
+      background-color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .sr-only {
+      position: absolute;
+      clip: rect(0 0 0 0);
+    }
+
+    input,
+    .btn {
+      padding: 6px 9px;
+      margin: 0 0 5px;
+      outline: 0;
+      font-family: sans-serif;
+      font-size: 1.1rem;
+      font-weight: 100;
+      line-height: 1.4em;
+      background: #fff;
+      color: #2f2f2c;
+      border: 1px solid #e7eef2;
+      border-radius: 4px;
+      box-shadow: none;
+    }
+
+    .btn {
+      color: #fff;
+      background-color: #007aac;
+    }
+
   </style>
 </head>
 <body>
+  <div class="newsletter">
+        <!-- Begin MailChimp Signup Form -->
+    <form id="stay-up-to-date" class="section mail-subscribe-form" action="//scriptconf.us13.list-manage.com/subscribe/post?u=f5bed0058ba0f92552c55c755&amp;id=cc56f4a027" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate="">
+      <h2>It's coming ... stay informed!</h2>
+      <label class="sr-only" for="mce-EMAIL">Email Address</label>
+      <input placeholder="Enter your e-mail" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+      <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_f5bed0058ba0f92552c55c755_cc56f4a027" tabindex="-1" value=""></div>
+      <input class="btn" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
+      <p>Updates max. once a month - no spam (we don't like spam)</p>
+    </form>
+  </div>
    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 630 630" id="logo">
       <g transform="translate(0.000000,630.000000) scale(0.100000,-0.100000)" fill="white" stroke="none">
         <path d="M0 3150 l0 -3150 3150 0 3150 0 0 3150 0 3150 -3150 0 -3150 0 0
