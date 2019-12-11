@@ -3,51 +3,73 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>tsconf.eu - coming soon.</title>
+  <title>TSConf:EU 2020 - March 31</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:600,700&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      background-color: #007ACC;
-      font-family: sans-serif;
-    }
-
-    #logo {
-      width: 80px;
-      height: 80px;
-      position: absolute;
-      right: 20px;
-      bottom: 20px;
-    }
-
-    @media(min-width: 600px) {
-      #logo {
-        width: 150px;
-        height: 150px;
-      }
-    }
-
-
-    @media(min-width: 1000px) {
-      #logo {
-        width: 200px;
-        height: 200px;
-      }
-    }
-
-    .newsletter {
-      position: absolute;
-      height: 100vh;
-      width: 100vw;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .mail-subscribe-form {
-      color: #007aac;
       background-color: white;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .content {
       padding: 2rem;
-      text-align: center;
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: 80vw;
+    }
+
+    .headline, .subheadline {
+      color: rgb(254, 39, 45);
+      font-size: 4.25rem;
+      font-family: Poppins;
+      font-weight: 700;
+      line-height: 1.1em;
+    }
+
+    .subheadline {
+      font-size: 3rem;
+    }
+
+    .text {
+      color: rgb(19, 49, 121);
+      font-family: Poppins;
+      font-size: 1.375rem;
+      font-weight: 600;
+    }
+
+    .logo {
+      width: 75px;
+      position: absolute;
+      right: 1rem;
+    }
+
+    .block {
+      display: block;
+    }
+
+    .bird {
+      height: 38px;
+      fill:rgb(254, 39, 45);
+      position: fixed;
+      right: 1rem;
+    }
+
+    .btn {
+      -webkit-appearance: none;
+      background-color: #fe272d;
+      color: white;
+      font-size: 1.125rem;
+      line-height: 1em;
+      padding: 10px;
+      font-family: Poppins;
+      font-weight: 700;
+      border: none;
+      text-decoration: none;
     }
 
     .sr-only {
@@ -55,59 +77,65 @@
       clip: rect(0 0 0 0);
     }
 
-    input,
-    .btn {
-      padding: 6px 9px;
-      margin: 0 0 5px;
-      outline: 0;
-      font-family: sans-serif;
-      font-size: 1.1rem;
-      font-weight: 100;
-      line-height: 1.4em;
-      background: #fff;
-      color: #2f2f2c;
-      border: 1px solid #e7eef2;
-      border-radius: 4px;
-      box-shadow: none;
+    .content {
+      min-height: 100vh;
+      width: 100%;
     }
 
-    .btn {
-      color: #fff;
-      background-color: #007aac;
+    .email {
+      height: 38px;
+      border: 1px solid rgb(19, 49, 121);
+      width: 300px;
+      font-family: Poppins;
+      padding-left: 0.5rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .email::placeholder {
+      font-family: Poppins;
+    }
+
+    @media(min-width: 500px) {
+      .logo {
+        right: 3rem;
+        width: 150px;
+      }
+
+      .bird {
+        right: 3rem;
+        bottom: 2rem;
+      }
     }
 
   </style>
 </head>
 <body>
-  <div class="newsletter">
-        <!-- Begin MailChimp Signup Form -->
-    <form id="stay-up-to-date" class="section mail-subscribe-form" action="//scriptconf.us13.list-manage.com/subscribe/post?u=f5bed0058ba0f92552c55c755&amp;id=cc56f4a027" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate="">
-      <h2>It's coming ... stay informed!</h2>
-      <label class="sr-only" for="mce-EMAIL">Email Address</label>
-      <input placeholder="Enter your e-mail" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-      <input style="display: none" type="checkbox" checked value="2" name="group[13385][2]" id="mce-group[13385]-13385-1">
-      <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_f5bed0058ba0f92552c55c755_cc56f4a027" tabindex="-1" value=""></div>
-      <input class="btn" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
-      <p>Updates max. once a month - no spam (we don't like spam)</p>
-    </form>
+<svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 296 362"><g fill="none" fill-rule="evenodd"><path fill="#133179" d="M0 0h296v362H0z"/><g fill-rule="nonzero"><path fill="#FE272D" d="M32.889 67.422h37.63v116.842h34.596V67.422h37.63V39.091H32.89v28.331zm230.437 73.62c0 24.403-18.613 44.67-51.793 44.67-30.55 0-54.423-15.51-55.434-44.876h36.821c1.012 11.167 7.89 16.544 17.601 16.544 10.116 0 16.59-5.17 16.59-13.649 0-26.884-71.012-12.408-70.608-63.9 0-27.505 22.053-42.808 51.793-42.808 30.954 0 51.793 15.716 53.209 43.428h-37.428c-.607-9.306-7.081-14.89-16.388-15.097-8.295-.207-14.567 4.136-14.567 13.235 0 25.23 70.204 13.856 70.204 62.454z"/><path fill="#FFF" d="M37 234.146c0 11.844 8.056 20.135 19.477 20.135 9.215 0 16.167-5.245 18.374-13.818H64.478c-1.6 3.384-4.524 5.076-8.11 5.076-5.795 0-9.767-4.4-9.767-11.393s3.972-11.393 9.766-11.393c3.587 0 6.51 1.692 8.111 5.076h10.373c-2.207-8.572-9.16-13.874-18.374-13.874-11.421 0-19.477 8.347-19.477 20.191zm71.534 4.117c0-9.982-6.952-16.186-16-16.186-8.995 0-16.002 6.204-16.002 16.186 0 9.983 6.842 16.187 15.89 16.187 9.05 0 16.112-6.204 16.112-16.187zm-22.401 0c0-5.358 2.98-7.84 6.4-7.84 3.31 0 6.4 2.482 6.4 7.84 0 5.302-3.144 7.84-6.51 7.84-3.421 0-6.29-2.538-6.29-7.84zM132.562 254h9.38v-18.386c0-8.46-4.745-13.424-11.863-13.424-4.138 0-7.45 1.862-9.325 4.512v-4.173h-9.435v31.47h9.435V236.91c0-4.287 2.317-6.655 5.904-6.655 3.586 0 5.904 2.368 5.904 6.655v17.089zm14.647 0h9.435v-23.462h5.076v-8.01h-5.076v-.281c0-3.328 1.27-4.456 4.91-4.23v-8.178c-9.38-.508-14.345 3.553-14.345 11.787v.903h-3.421v8.009h3.421v23.462zm36.136-4.738c0-2.989-2.262-5.301-5.573-5.301-3.365 0-5.628 2.312-5.628 5.301 0 2.877 2.263 5.19 5.628 5.19 3.311 0 5.573-2.313 5.573-5.19zm0-22.954c0-2.99-2.262-5.302-5.573-5.302-3.365 0-5.628 2.312-5.628 5.302 0 2.876 2.263 5.188 5.628 5.188 3.311 0 5.573-2.312 5.573-5.188zm36.633-11.9h-23.726v39.592h23.726v-7.727h-14.29v-8.685h12.635v-7.445h-12.636v-8.009h14.291v-7.727zm3.722 23.63v-23.63h9.436v23.687c0 4.681 2.262 7.389 6.731 7.389 4.47 0 6.842-2.708 6.842-7.389v-23.688h9.435v23.632c0 10.941-7.504 16.356-16.442 16.356-8.994 0-16.002-5.415-16.002-16.356z"/><path fill="#FE272D" d="M82.333 321.238h27.698v-7.84H95.134l.88-.698c6.221-4.982 13.41-11.951 13.41-20.565 0-6.937-4.083-12.408-13.242-12.408-7.339 0-13.684 4.287-13.96 14.27h9.104c0-3.892 1.656-6.148 4.47-6.148 2.869 0 4.193 1.917 4.193 4.907 0 6.937-9.104 14.1-17.656 21.319v7.163zm31.837-20.586c0 12.182 4.028 20.98 15.504 20.98 11.477 0 15.505-8.798 15.505-20.98 0-12.07-4.028-20.868-15.505-20.868-11.476 0-15.504 8.798-15.504 20.868zm21.74 0l-.011 1.32c-.103 5.935-1.032 10.636-6.225 10.636-5.446 0-6.202-5.17-6.234-11.512l.004-1.3c.066-5.952.91-10.988 6.23-10.988 5.573 0 6.235 5.527 6.235 11.844zm13.904 20.586h27.699v-7.84h-14.898l.881-.698c6.22-4.982 13.41-11.951 13.41-20.565 0-6.937-4.083-12.408-13.243-12.408-7.338 0-13.684 4.287-13.96 14.27h9.105c0-3.892 1.655-6.148 4.469-6.148 2.87 0 4.193 1.917 4.193 4.907 0 6.937-9.104 14.1-17.656 21.319v7.163zm31.837-20.586c0 12.182 4.028 20.98 15.505 20.98 11.476 0 15.504-8.798 15.504-20.98 0-12.07-4.028-20.868-15.504-20.868-11.477 0-15.505 8.798-15.505 20.868zm21.74 0l-.011 1.32c-.103 5.935-1.032 10.636-6.224 10.636-5.447 0-6.203-5.17-6.234-11.512l.003-1.3c.066-5.952.911-10.988 6.23-10.988 5.573 0 6.235 5.527 6.235 11.844z"/></g></g></svg> 
+<div class="content">
+  <div class="content-box">
+    <h1 class="headline">The conference for the European TypeScript community</h1>
+    <p class="text">
+      <time class="block" datetime="2020-03-31 08:30">March 31, 2020</time>
+      Linz, Austria
+    </p>
+    <p>
+      <a class="btn" href="https://www.papercall.io/tsconfeu-2020">Call for Speakers</a>
+    </p>
   </div>
-   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 630 630" id="logo">
-      <g transform="translate(0.000000,630.000000) scale(0.100000,-0.100000)" fill="white" stroke="none">
-        <path d="M0 3150 l0 -3150 3150 0 3150 0 0 3150 0 3150 -3150 0 -3150 0 0
-          -3150z m5077 251 c160 -40 282 -111 394 -227 58 -62 144 -175 151 -202 2 -8
-          -272 -192 -438 -295 -6 -4 -30 22 -57 62 -81 118 -166 169 -296 178 -191 13
-          -314 -87 -313 -254 0 -49 7 -78 27 -118 42 -87 120 -139 365 -245 451 -194
-          644 -322 764 -504 134 -203 164 -527 73 -768 -100 -262 -348 -440 -697 -499
-          -108 -19 -364 -16 -480 5 -253 45 -493 170 -641 334 -58 64 -171 231 -164 243
-          3 4 29 20 58 37 28 16 134 77 234 135 l181 105 38 -56 c53 -81 169 -192 239
-          -229 201 -106 477 -91 613 31 58 53 82 108 82 189 0 73 -9 105 -47 160 -49 70
-          -149 129 -433 252 -325 140 -465 227 -593 365 -74 80 -144 208 -173 315 -24
-          89 -30 312 -11 402 67 314 304 533 646 598 111 21 369 13 478 -14z m-1479
-          -263 l2 -258 -410 0 -410 0 0 -1165 0 -1165 -290 0 -290 0 0 1165 0 1165 -410
-          0 -410 0 0 253 c0 140 3 257 7 260 3 4 502 6 1107 5 l1101 -3 3 -257z" />
-      </g>
-    </svg>
-  <div id="particles"></div>
-  <script src="./assets/main.js"></script>
+  <form id="stay-up-to-date" class="section mail-subscribe-form" action="//scriptconf.us13.list-manage.com/subscribe/post?u=f5bed0058ba0f92552c55c755&amp;id=cc56f4a027" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate="">
+    <h2 class="subheadline">Stay informed</h2>
+    <label class="sr-only" for="mce-EMAIL">Email Address</label>
+    <input placeholder="Join our newsletter" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+    <input style="display: none" type="checkbox" checked value="2" name="group[13385][2]" id="mce-group[13385]-13385-1">
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_f5bed0058ba0f92552c55c755_cc56f4a027" tabindex="-1" value=""></div>
+    <input class="btn" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
+
+    <p class="text">Updates max. once a month - no spam (we don't like spam)</p>
+  </form>
+</div>
+<a href="https://twitter.com/tsconfeu"><svg class="bird" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 244.187"><path fill="#fe272d" d="M94.719 243.187c112.46 0 173.956-93.168 173.956-173.956 0-2.647-.054-5.28-.173-7.903A124.323 124.323 0 00299 29.668c-10.955 4.87-22.744 8.147-35.11 9.625 12.623-7.569 22.314-19.543 26.885-33.817a122.61 122.61 0 01-38.824 14.84C240.794 8.433 224.911 1 207.322 1c-33.763 0-61.144 27.38-61.144 61.132 0 4.798.537 9.465 1.586 13.94C96.948 73.517 51.89 49.188 21.738 12.194a60.978 60.978 0 00-8.278 30.73c0 21.212 10.793 39.938 27.207 50.893a60.69 60.69 0 01-27.69-7.647c-.01.257-.01.507-.01.781 0 29.61 21.076 54.332 49.052 59.934a61.22 61.22 0 01-16.122 2.152c-3.934 0-7.766-.387-11.49-1.103C42.19 172.227 64.76 189.904 91.52 190.4c-20.925 16.402-47.287 26.17-75.937 26.17-4.929 0-9.798-.28-14.584-.846 27.059 17.344 59.19 27.464 93.722 27.464"/></svg></a>
+    
+   
 </body>
 </html>
