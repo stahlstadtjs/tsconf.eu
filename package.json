@@ -11,6 +11,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/markdownit": "^1.2.7",
     "nuxt": "^2.0.0",
     "storyblok-nuxt": "^1.0.2"
   },

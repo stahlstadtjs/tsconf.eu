@@ -1,13 +1,18 @@
 import Vue from 'vue'
 
-// Single Use and Layout Components
+// Content Types
 import Page from '@/components/Page.vue'
-import Facts from '@/components/Facts.vue'
-import Footer from '@/components/Footer.vue'
+import Speaker from '@/components/Speaker.vue'
+
+// Single Use and Layout Components
+import MainFooter from '@/components/MainFooter.vue'
 import Newsletter from '@/components/Newsletter.vue'
-import Schedules from '@/components/Schedules.vue'
 
 // Heros and Teaser Components
+import Facts from '@/components/Facts.vue'
+import Schedules from '@/components/Schedules.vue'
+import Gallery from '@/components/Gallery.vue'
+import PureText from '@/components/PureText.vue'
 import Hero from '@/components/Hero.vue'
 import SuperHero from '@/components/SuperHero.vue'
 import Teaser from '@/components/Teaser.vue'
@@ -26,24 +31,28 @@ import TicketReference from '@/components/TicketReference.vue'
 /* Map components to names in Storyblok */
 // TODO: Use webpack require.context to import automatically
 
-// Single Use and Layout Components
 Vue.component('page', Page)
-Vue.component('facts', Facts)
-Vue.component('main_footer', Footer)
-Vue.component('schedules', Schedules)
+Vue.component('speaker', Speaker)
+
+// Single Use and Layout Components
+Vue.component('main-footer', MainFooter)
 Vue.component('newsletter', Newsletter)
 
-// Heros and Teaser Components
+// Full Section Components
+Vue.component('facts', Facts)
+Vue.component('schedules', Schedules)
+Vue.component('gallery', Gallery)
+Vue.component('pure-text', PureText)
 Vue.component('hero', Hero)
-Vue.component('super_hero', SuperHero)
+Vue.component('super-hero', SuperHero)
 Vue.component('teaser', Teaser)
-Vue.component('map_teaser', MapTeaser)
-Vue.component('prime_teaser', PrimeTeaser)
-Vue.component('sensation_teaser', SensationTeaser)
+Vue.component('map-teaser', MapTeaser)
+Vue.component('prime-teaser', PrimeTeaser)
+Vue.component('sensation-teaser', SensationTeaser)
 
 // Reference Components
-Vue.component('nightlife_reference', NightlifeReference)
-Vue.component('sightseeing_reference', SightseeingReference)
-Vue.component('speaker_reference', SpeakerReference)
-Vue.component('sponsor_reference', SponsorReference)
-Vue.component('ticket_reference', TicketReference)
+Vue.component('nightlife-reference', NightlifeReference)
+Vue.component('sightseeing-reference', SightseeingReference)
+Vue.component('speaker-reference', SpeakerReference)
+Vue.component('sponsor-reference', SponsorReference)
+Vue.component('ticket-reference', TicketReference)

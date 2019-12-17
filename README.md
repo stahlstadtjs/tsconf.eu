@@ -19,4 +19,12 @@ $ npm run start
 $ npm run generate
 ```
 
+## Markdown Usage
+
+We're using [@nuxtjs/markdownit](https://www.npmjs.com/package/@nuxtjs/markdownit) to render markdown.
+
+```
+<div v-html="$md.render(your_field_goes_here)"></div>
+```
+
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

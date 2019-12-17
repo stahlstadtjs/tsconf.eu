@@ -41,7 +41,8 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    [ 'storyblok-nuxt', { accessToken: 'z7JV5HUxpNV10rvNaQ5n3Att', cacheProvider: 'memory' } ]
+    ['storyblok-nuxt', { accessToken: 'z7JV5HUxpNV10rvNaQ5n3Att', cacheProvider: 'memory' }],
+    ['@nuxtjs/markdownit']
   ],
   /*
   ** Build configuration
@@ -52,5 +53,11 @@ export default {
     */
     extend (config, ctx) {
     }
+  },
+  /*
+  ** Markdownit configurations
+  */
+  markdownit: {
+    injected: true,
   }
 }
