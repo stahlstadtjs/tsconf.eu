@@ -11,7 +11,8 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "storyblok-nuxt": "^1.0.2"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.5.1"

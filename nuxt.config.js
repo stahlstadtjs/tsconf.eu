@@ -28,6 +28,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    'plugins/transformImage.ts',
+    'plugins/components.ts'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -39,6 +41,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    [ 'storyblok-nuxt', { accessToken: 'z7JV5HUxpNV10rvNaQ5n3Att', cacheProvider: 'memory' } ]
   ],
   /*
   ** Build configuration
