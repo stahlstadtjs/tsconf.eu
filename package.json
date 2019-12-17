@@ -1,27 +1,19 @@
 {
   "name": "tsconf.eu",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Website for TypeScript Conf EU (tsconf.eu)",
+  "author": "Scriptconf.org",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "rimraf": "rm -rf dist .tmp",
-    "copy": "node copy",
-    "bundle": "rollup --config rollup.config.js",
-    "tsc": "tsc",
-    "build": "npm run rimraf && npm run tsc && npm run bundle && npm run copy"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "rollup": "^0.60.2",
-    "rollup-plugin-babel-minify": "^5.0.0",
-    "rollup-plugin-commonjs": "^9.1.3",
-    "rollup-plugin-node-resolve": "^3.3.0",
-    "typescript": "^2.9.1",
-    "vinyl-fs": "^3.0.3"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
   },
   "dependencies": {
-    "particles.js": "^2.0.0"
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "@nuxt/typescript-build": "^0.5.1"
   }
 }
