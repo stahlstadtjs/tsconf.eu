@@ -3,13 +3,22 @@
     <h2>SponsorReference</h2>
     {{blok.headline}}<br>
     {{blok.subheadline}}
+
+    <ul>
+      <li v-for="sponsor in sponsors" :key="sponsor.uuid">
+        {{sponsor}}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['blok']
-
-  // todo: load and access Sponsors
+  props: ['blok'],
+  computed: {
+    sponsors() {
+      return this.$store.state.references.sponsors
+    }
+  }
 }
 </script>

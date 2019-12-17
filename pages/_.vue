@@ -39,16 +39,29 @@ export default {
       }
     })
   },
-  async asyncData (context) {
-
-    const fullSlug = (context.route.path == '/' || context.route.path == '') ? 'home' : context.route.path 
-
-    let [pageRes, settingRes] = await Promise.all([
-      context.app.$storyapi.get(`cdn/stories/${fullSlug}`, { version: 'draft' }),
-      context.app.$storyapi.get(`cdn/stories/settings`, { version: 'draft' }),
+  async fetch(context) {
+    let [nightlifeRefRes, sightseeingRefRes, sponsorsRefRes, speakersRefRes, ticketsRefRes] = await Promise.all([
+      context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'nightlife/', version: 'draft' }),
+      context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'sightseeing/', version: 'draft' }),
+      context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'sponsors/', version: 'draft' }),
+      context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'speakers/', version: 'draft' }),
+      context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'tickets/', version: 'draft' }),
     ])
 
-    console.log(settingRes.data.story)
+    context.store.commit('references/setNightlife', nightlifeRefRes.data.stories)
+    context.store.commit('references/setSightseeing', sightseeingRefRes.data.stories)
+    context.store.commit('references/setSponsors', sponsorsRefRes.data.stories)
+    context.store.commit('references/setSpeakers', speakersRefRes.data.stories)
+    context.store.commit('references/setTickets', ticketsRefRes.data.stories)
+  },
+  async asyncData (context) {
+    const fullSlug = (context.route.path == '/' || context.route.path == '') ? 'home' : context.route.path 
+    let [pageRes, settingRes] = await Promise.all([
+      // Current Page Content
+      context.app.$storyapi.get(`cdn/stories/${fullSlug}`, { version: 'draft' }),
+      // Global Settings
+      context.app.$storyapi.get(`cdn/stories/settings`, { version: 'draft' })
+    ])
 
     return {
        story: pageRes.data.story,

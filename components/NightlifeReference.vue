@@ -7,13 +7,22 @@
     {{blok.cta_link}}<br>
     {{blok.cta_text}}<br>
     {{blok.cta_title}}
+
+    <ul>
+      <li v-for="nightlife in nightlifeEntries" :key="nightlife.uuid">
+        {{nightlife}}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['blok']
-
-  // todo: load and access sightseeing
+  props: ['blok'],
+  computed: {
+    nightlifeEntries() {
+      return this.$store.state.references.nightlife
+    }
+  }
 }
 </script>
