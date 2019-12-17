@@ -22,6 +22,14 @@
 
 <script>
 export default {
-  props: ['blok']
+  props: ['blok'],
+  methods: {
+    generateUuidMapFromArray(entries) {
+      return entries.reduce((map, entry) => {
+        map[entry.uuid] = entry
+        return map
+      }, {})
+    }
+  }
 }
 </script>
