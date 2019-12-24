@@ -16,6 +16,7 @@
     "storyblok-nuxt": "^1.0.2"
   },
   "devDependencies": {
-    "@nuxt/typescript-build": "^0.5.1"
+    "@nuxt/typescript-build": "^0.5.1",
+    "@nuxtjs/tailwindcss": "^1.2.0"
   }
 }

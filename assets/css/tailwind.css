@@ -1,0 +1,16 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* * {
+  color: #fff;
+} */
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+/* headline: text-red font-bold text-6xl uppercase */
+/* subheadline: text-red font-semibold text-3xl */

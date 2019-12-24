@@ -1,8 +1,8 @@
 import Vue from 'vue'
 
 // Content Types
-import Page from '@/components/Page.vue'
-import Speaker from '@/components/Speaker.vue'
+import Page from '@/components/content-types/Page.vue'
+import Speaker from '@/components/content-types/Speaker.vue'
 
 // Single Use and Layout Components
 import MainFooter from '@/components/MainFooter.vue'
@@ -26,7 +26,6 @@ import SightseeingReference from '@/components/SightseeingReference.vue'
 import SpeakerReference from '@/components/SpeakerReference.vue'
 import SponsorReference from '@/components/SponsorReference.vue'
 import TicketReference from '@/components/TicketReference.vue'
-
 
 /* Map components to names in Storyblok */
 // TODO: Use webpack require.context to import automatically

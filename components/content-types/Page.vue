@@ -1,6 +1,5 @@
 <template>
-  <div class="page" v-editable="blok">
-    <h1>Page</h1>
+  <div v-editable="blok">
     <template v-for="blok in blok.body">
       <component 
         :key="blok._uid"

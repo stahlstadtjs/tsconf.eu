@@ -8,7 +8,7 @@
 
     <!-- Loop through footer components -->
     <template v-for="blok in settings.content.footer">
-      <component 
+      <component
         :key="blok._uid"
         :blok="blok"
         :is="blok.component"></component>
@@ -40,12 +40,14 @@ export default {
     })
   },
   async fetch(context) {
+    const version = 'draft'
+
     let [nightlifeRefRes, sightseeingRefRes, sponsorsRefRes, speakersRefRes, ticketsRefRes] = await Promise.all([
-      context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'nightlife/', version: 'draft' }),
-      context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'sightseeing/', version: 'draft' }),
-      context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'sponsors/', version: 'draft' }),
-      context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'speakers/', version: 'draft' }),
-      context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'tickets/', version: 'draft' }),
+      context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'nightlife/', resolve_links:'url', version: version }),
+      context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'sightseeing/', resolve_links:'url', version: version }),
+      context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'sponsors/', resolve_links:'url', version: version }),
+      context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'speakers/', resolve_links:'url', version: version }),
+      context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'tickets/', resolve_links:'url', version: version }),
     ])
 
     context.store.commit('references/setNightlife', nightlifeRefRes.data.stories)
@@ -55,12 +57,14 @@ export default {
     context.store.commit('references/setTickets', ticketsRefRes.data.stories)
   },
   async asyncData (context) {
+    const version = 'draft'
     const fullSlug = (context.route.path == '/' || context.route.path == '') ? 'home' : context.route.path 
+
     let [pageRes, settingRes] = await Promise.all([
       // Current Page Content
-      context.app.$storyapi.get(`cdn/stories/${fullSlug}`, { version: 'draft' }),
+      context.app.$storyapi.get(`cdn/stories/${fullSlug}`, { resolve_links:'url', version: version }),
       // Global Settings
-      context.app.$storyapi.get(`cdn/stories/settings`, { version: 'draft' })
+      context.app.$storyapi.get(`cdn/stories/settings`, { resolve_links:'url', version: version })
     ])
 
     return {

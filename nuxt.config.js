@@ -13,7 +13,8 @@ export default {
       { name: 'robots', content: 'noindex' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel:'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap' }
     ]
   },
   /*
@@ -30,13 +31,15 @@ export default {
   */
   plugins: [
     'plugins/transformImage.ts',
-    'plugins/components.ts'
+    'plugins/components.ts',
+    'plugins/url.ts'
   ],
   /*
   ** Nuxt.js dev-modules
   */
   buildModules: [
-    '@nuxt/typescript-build'
+    '@nuxt/typescript-build',
+    '@nuxtjs/tailwindcss'
   ],
   /*
   ** Nuxt.js modules
