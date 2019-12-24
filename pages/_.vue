@@ -1,6 +1,5 @@
 <template>
-  <div>
-  
+  <div class="default">
     <component v-if="story.content.component" 
       :key="story.content._uid" 
       :blok="story.content"
@@ -61,9 +60,7 @@ export default {
     const fullSlug = (context.route.path == '/' || context.route.path == '') ? 'home' : context.route.path 
 
     let [pageRes, settingRes] = await Promise.all([
-      // Current Page Content
       context.app.$storyapi.get(`cdn/stories/${fullSlug}`, { resolve_links:'url', version: version }),
-      // Global Settings
       context.app.$storyapi.get(`cdn/stories/settings`, { resolve_links:'url', version: version })
     ])
 

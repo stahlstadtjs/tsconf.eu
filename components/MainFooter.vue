@@ -10,7 +10,7 @@
           <ul>
             <li v-editable="footerLink"
               v-for="footerLink in footerColumn.links" :key="footerLink._uid" >
-              <nuxt-link class="opacity-75 hover:opacity-100 mb-1 block" :to="$options.filters.url(footerLink.link)" :title="footerLink.title">{{footerLink.name}}</nuxt-link>
+              <nuxt-link class="opacity-75 focus:opacity-100 hover:opacity-100 mb-1 block" :to="$options.filters.url(footerLink.link)" :title="footerLink.title">{{footerLink.name}}</nuxt-link>
             </li>  
           </ul>  
         </div>

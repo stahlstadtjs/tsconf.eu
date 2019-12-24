@@ -1,17 +1,17 @@
 <template>
   <div class="super-hero" v-editable="blok">
-    <div class="container p-12 pt-32 pb-48">
+    <div class="container p-8 pt-32 pb-48">
       <div class="flex">
         <div class="w-1/2">
-          <h1 class="text-red uppercase font-bold text-6xl">{{blok.headline}}</h1>
+          <h1 class="text-red uppercase font-bold text-6xl leading-tight mb-5">{{blok.headline}}</h1>
           <p class="text-blue font-bold text-2xl">Linz, AT</p>
           <p class="text-blue font-bold text-2xl">31th March, 2020</p>
 
-          <a href="" class="inline-block py-2 px-3 mt-4 bg-red text-white hover:bg-blue">Get your ticket!</a>
+          <a href="" class="inline-block py-2 px-3 mt-6 bg-red text-white focus:bg-blue hover:bg-blue">Get your ticket!</a>
         </div>
         <div class="w-1/2">
           <img :src="$options.filters.transformImage(blok.image, '500x400')" alt />
-          <div class="text-red font-bold -mt-12 text-6xl pl-12 leading-none mb-6 whitespace-pre" v-html="blok.tagline"></div>
+          <div class="text-red font-bold -mt-12 ml-12 text-6xl pl-12 leading-none mb-6 whitespace-pre" v-html="blok.tagline"></div>
 
           <div class="flex text-center text-white font-bold" v-if="!finished">
             <div class="w-1/5">

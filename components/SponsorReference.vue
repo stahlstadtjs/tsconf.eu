@@ -1,13 +1,13 @@
 <template>
   <div class="sponsor-reference" v-editable="blok">
-    <div class="container p-12 py-32">
+    <div class="container p-8 py-32">
       <h2 class="text-red font-bold text-6xl uppercase text-center">{{blok.headline}}</h2>
       <p class="text-red font-semibold text-3xl mb-12 max-w-lg text-center mx-auto">{{blok.subheadline}}</p>
 
       <h3 class="text-red font-semibold text-1xl">Platinum Sponsor</h3>
       <ul class="flex">
         <li class="w-1/5" :class="{ 'mt-6': index % 2 === 0 }" v-for="(sponsor, index) in platinumSponsors" :key="sponsor.uuid" v-editable="sponsor.content">
-          <a class="block shadow-lg hover:shadow-xl mr-12 p-6 rounded-full overflow-hidden" :href="$options.filters.url(sponsor.content.link)">
+          <a class="block shadow-lg focus:shadow-xl hover:shadow-xl mr-12 p-6 rounded-full overflow-hidden" :href="$options.filters.url(sponsor.content.link)">
             <img :src="$options.filters.transformImage(sponsor.content.logo, 'fit-in/176x176/filters:fill(FFFFFF)')" :alt="sponsor.name">
           </a>
         </li>
@@ -19,7 +19,7 @@
             <h3 class="text-red font-semibold text-1xl mb-3">Gold Sponsor</h3>
             <ul class="flex">
               <li class="w-1/3 mr-6" v-for="sponsor in goldSponsors" :key="sponsor.uuid" v-editable="sponsor.content">
-                <a class="block shadow-lg hover:shadow-xl p-6" :href="$options.filters.url(sponsor.content.link)">
+                <a class="block shadow-lg focus:shadow-xl hover:shadow-xl p-6" :href="$options.filters.url(sponsor.content.link)">
                   <img :src="$options.filters.transformImage(sponsor.content.logo, 'fit-in/144x80/filters:fill(FFFFFF)')" :alt="sponsor.name">
                 </a>
               </li>

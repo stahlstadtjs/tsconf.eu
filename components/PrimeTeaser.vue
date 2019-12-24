@@ -1,6 +1,6 @@
 <template>
   <div class="prime-teaser relative" v-editable="blok">
-    <div class="container p-12 py-32">
+    <div class="container p-8 py-32">
       <div class="flex">
         <div class="w-1/2">
           <img class="pr-12" :src="$options.filters.transformImage(blok.primary_image, '500x0')" :alt="blok.primary_image_alt" />
