@@ -1,14 +1,15 @@
 <template>
   <div class="newsletter text-white bg-blue">
     <div class="container mx-auto pt-24" v-editable="blok">
+
       <div class="max-w-md text-red text-5xl pl-8 font-bold uppercase">{{blok.headline}}</div>
       <div class="bg-white p-8 mt-12">
-        <div class="flex">
-          <div class="w-1/2">
+        <div class="flex flex-wrap">
+          <div class="w-full md:w-1/2">
             <p class="text-blue font-semibold text-3xl">{{blok.description}}</p>
             <p class="text-red font-semibold text-3xl">{{blok.disclaimer}}</p>
           </div>
-          <div class="w-1/2">
+          <div class="w-full md:w-1/2">
             <form class="w-full" :action="$options.filters.url(blok.cta_link)" method="post" name="mc-embedded-subscribe-form" target="_blank">
               <div class="flex pt-12 items-center border-b border-b-2 py-2 mx-auto max-w-md">
                 <input class="hidden" type="checkbox" checked="" value="2" name="group[13385][2]" id="mce-group[13385]-13385-1">

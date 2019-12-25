@@ -5,16 +5,16 @@
       <p class="text-red font-semibold text-3xl mb-12 max-w-lg text-center mx-auto">{{blok.subheadline}}</p>
 
       <h3 class="text-red font-semibold text-1xl">Platinum Sponsor</h3>
-      <ul class="flex">
-        <li class="w-1/5" :class="{ 'mt-6': index % 2 === 0 }" v-for="(sponsor, index) in platinumSponsors" :key="sponsor.uuid" v-editable="sponsor.content">
-          <a class="block shadow-lg focus:shadow-xl hover:shadow-xl mr-12 p-6 rounded-full overflow-hidden" :href="$options.filters.url(sponsor.content.link)">
+      <ul class="flex flex-wrap">
+        <li class="w-48 lg:w-1/5" :class="{ 'md:mt-6': index % 2 === 0 }" v-for="(sponsor, index) in platinumSponsors" :key="sponsor.uuid" v-editable="sponsor.content">
+          <a class="block shadow-lg focus:shadow-xl hover:shadow-xl mr-6 md:mr-8 p-6 rounded-full overflow-hidden" :href="$options.filters.url(sponsor.content.link)">
             <img :src="$options.filters.transformImage(sponsor.content.logo, 'fit-in/176x176/filters:fill(FFFFFF)')" :alt="sponsor.name">
           </a>
         </li>
       </ul>
 
-      <div class="flex mt-24">
-        <div class="w-1/2">
+      <div class="flex flex-wrap mt-24">
+        <div class="w-full md:w-1/2">
           <template v-if="goldSponsors.length > 0">
             <h3 class="text-red font-semibold text-1xl mb-3">Gold Sponsor</h3>
             <ul class="flex">
@@ -27,7 +27,7 @@
           </template>
         </div>
 
-        <div class="w-1/2">
+        <div class="w-full md:w-1/2">
           <template v-if="silverSponsors.length > 0">
           <h3 class="text-red font-semibold text-1xl mb-3">Silver Sponsor</h3>
           <ul class="flex mb-12">
