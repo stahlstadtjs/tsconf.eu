@@ -6,9 +6,9 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build": "nuxt generate",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "old-build": "nuxt build"
   },
   "dependencies": {
     "@nuxtjs/markdownit": "^1.2.7",
