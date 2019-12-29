@@ -1,3 +1,4 @@
+const axios = require('axios')
 
 export default {
   mode: 'universal',
@@ -62,6 +63,26 @@ export default {
   ** Using generate to, well, generate our pages with this hidden little gem :)
   */
   generate: {
+    routes: function (callback) {
+      const token = `z7JV5HUxpNV10rvNaQ5n3Att`
+      const version = 'published'
+      let cache_version = 0
+  
+      
+      // other routes that are not in Storyblok with their slug.
+      let routes = ['/',
+        '/code-of-conduct',
+        '/faq',
+        '/legal-notice',
+        '/speakers',
+        '/venue',
+        '/schedule',
+        '/social'
+      ] // adds / directly
+
+      callback(null, routes)
+
+    },
     fallback: true,
   },
   /*
