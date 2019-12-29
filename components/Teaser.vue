@@ -4,7 +4,7 @@
       <div class="flex flex-wrap">
         <template v-if="!blok.reverse">
           <div class="w-full md:w-1/2">
-            <img class="md:float-right" :src="$options.filters.transformImage(blok.image, '500x0')" alt="">
+            <img loading="lazy" class="md:float-right" :src="$options.filters.transformImage(blok.image, '500x0')" alt="">
           </div>
           <div class="w-full md:w-1/2 md:pt-16">
             <h2 class="text-red font-bold text-6xl uppercase md:-ml-24">{{blok.headline}}</h2>
@@ -23,7 +23,7 @@
             </div>
           </div>
           <div class="w-full md:w-1/2 z-0">
-            <img :src="$options.filters.transformImage(blok.image, '500x0')" alt="">
+            <img loading="lazy" :src="$options.filters.transformImage(blok.image, '500x0')" alt="">
           </div>
         </template>
       </div>

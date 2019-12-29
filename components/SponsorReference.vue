@@ -8,7 +8,7 @@
       <ul class="flex flex-wrap">
         <li class="w-48 lg:w-1/5" :class="{ 'md:mt-6': index % 2 === 0 }" v-for="(sponsor, index) in platinumSponsors" :key="sponsor.uuid" v-editable="sponsor.content">
           <a class="block shadow-lg focus:shadow-xl hover:shadow-xl mr-6 md:mr-8 p-6 rounded-full overflow-hidden" :href="$options.filters.url(sponsor.content.link)">
-            <img :src="$options.filters.transformImage(sponsor.content.logo, 'fit-in/176x176/filters:fill(FFFFFF)')" :alt="sponsor.name">
+            <img loading="lazy" :src="$options.filters.transformImage(sponsor.content.logo, 'fit-in/176x176/filters:fill(FFFFFF)')" :alt="sponsor.name">
           </a>
         </li>
       </ul>
@@ -20,7 +20,7 @@
             <ul class="flex">
               <li class="w-1/3 mr-6" v-for="sponsor in goldSponsors" :key="sponsor.uuid" v-editable="sponsor.content">
                 <a class="block shadow-lg focus:shadow-xl hover:shadow-xl p-6" :href="$options.filters.url(sponsor.content.link)">
-                  <img :src="$options.filters.transformImage(sponsor.content.logo, 'fit-in/144x80/filters:fill(FFFFFF)')" :alt="sponsor.name">
+                  <img loading="lazy" :src="$options.filters.transformImage(sponsor.content.logo, 'fit-in/144x80/filters:fill(FFFFFF)')" :alt="sponsor.name">
                 </a>
               </li>
             </ul>
@@ -33,7 +33,7 @@
           <ul class="flex mb-12">
             <li class="w-1/3 mr-6" v-for="sponsor in silverSponsors" :key="sponsor.uuid" v-editable="sponsor.content">
               <a class="block p-6" :href="$options.filters.url(sponsor.content.link)">
-                <img :src="$options.filters.transformImage(sponsor.content.logo, 'fit-in/144x80/filters:fill(FFFFFF)')" :alt="sponsor.name">
+                <img loading="lazy" :src="$options.filters.transformImage(sponsor.content.logo, 'fit-in/144x80/filters:fill(FFFFFF)')" :alt="sponsor.name">
               </a>
             </li>
           </ul>
@@ -44,7 +44,7 @@
             <ul class="flex">
               <li class="w-1/4 mr-6" v-for="sponsor in bronzeSponsors" :key="sponsor.uuid" v-editable="sponsor.content">
                 <a class="block p-6" :href="$options.filters.url(sponsor.content.link)">
-                  <img :src="$options.filters.transformImage(sponsor.content.logo, 'fit-in/144x80/filters:fill(FFFFFF)')" :alt="sponsor.name">
+                  <img loading="lazy" :src="$options.filters.transformImage(sponsor.content.logo, 'fit-in/144x80/filters:fill(FFFFFF)')" :alt="sponsor.name">
                 </a>
               </li>
             </ul>  

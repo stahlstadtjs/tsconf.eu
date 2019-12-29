@@ -20,14 +20,14 @@
               <div class="w-3/4" v-if="!scheduleItem.speaker">
                 <h4 class="text-red font-semibold leading-tight text-3xl mb-4">{{scheduleItem.headline}}</h4>
                 <div class="flex">
-                  <img class="rounded-full" v-if="scheduleItem.image" :src="$options.filters.transformImage(scheduleItem.image, '80x80')" alt="">
+                  <img loading="lazy" class="rounded-full" v-if="scheduleItem.image" :src="$options.filters.transformImage(scheduleItem.image, '80x80')" alt="">
                   <div v-if="scheduleItem.text" class="text-blue" v-html="$md.render(scheduleItem.text)"></div>
                 </div>
               </div>
               <div class="w-3/4" v-if="scheduleItem.speaker">
                 <h4 class="text-red font-semibold leading-tight text-3xl mb-4">{{speakers[scheduleItem.speaker].name}}</h4>
                 <div class="flex">
-                  <img class="rounded-full" :src="$options.filters.transformImage(speakers[scheduleItem.speaker].content.image, '80x80')" :alt="speakers[scheduleItem.speaker].name">
+                  <img loading="lazy" class="rounded-full" :src="$options.filters.transformImage(speakers[scheduleItem.speaker].content.image, '80x80')" :alt="speakers[scheduleItem.speaker].name">
                   <div v-if="scheduleItem.text" class="text-blue pl-4" v-html="$md.render(scheduleItem.text)"></div>
                 </div>
               </div>
