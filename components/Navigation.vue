@@ -21,11 +21,6 @@
             <img src="https://a.storyblok.com/f/71805/x/08b62f2c3a/twitter.svg" alt="Twitter logo">
           </a>
         </li>
-        <li class="mr-4">
-          <a class="w-6 inline-block" target="_blank" rel="noopener noreferrer" href="https://tsconfeu.slack.com/" title="TS:Conf EU - Slack">
-            <img src="https://a.storyblok.com/f/71805/x/03dc50177f/slack.svg" alt="Slack logo">
-          </a>
-        </li>
         <li>
           <span class="text-white inline-block">Connect with us!</span>
         </li>
