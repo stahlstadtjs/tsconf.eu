@@ -9,7 +9,7 @@
               {{schedule.headline}}
               <span class="text-blue font-normal text-base">{{schedule.notice}}</span>
             </span>
-            <span class="text-blue font-bold text-6xl block" v-html="schedule.date"></span>
+            <span class="text-blue font-bold text-5xl lg:text-6xl block" v-html="schedule.date"></span>
           </h3>
           
           <ul class="border-blue mr-10 my-8" :class="{ 'border-r': index === 0 }">

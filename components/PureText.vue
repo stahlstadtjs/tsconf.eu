@@ -14,7 +14,7 @@ export default {
 
 <style>
 .markdown h1 {
-  @apply text-red uppercase font-bold text-6xl leading-tight mb-5;
+  @apply text-red uppercase font-bold text-5xl leading-tight mb-5;
 }
 
 .markdown h2 {

@@ -6,7 +6,7 @@
           <img loading="lazy" class="pr-12" :src="$options.filters.transformImage(blok.primary_image, '500x0')" :alt="blok.primary_image_alt" />
         </div>
         <div class="w-full md:w-1/2">
-          <h2 class="text-red uppercase font-bold text-6xl">{{blok.headline}}</h2>
+          <h2 class="text-red uppercase font-bold text-5xl lg:text-6xl">{{blok.headline}}</h2>
           <p class="text-red font-semibold text-3xl mb-6">{{blok.subheadline}}</p>
           <p class="text-blue text-lg lg:pr-32 mb-6">{{blok.text}}</p>
 

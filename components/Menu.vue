@@ -1,5 +1,5 @@
 <template>
-  <div class="menu fixed z-50 right-0 inset-y-0 text-center p-4 h-screen bg-white shadow-xl">
+  <div class="menu-desktop fixed z-50 right-0 inset-y-0 text-center p-4 h-screen bg-white shadow-xl">
     <div class="block">
       <nuxt-link class="block" to="/" title="Go to startpage">
         <svg version="1.1" viewBox="0 0 64 94" xmlns="http://www.w3.org/2000/svg">
@@ -20,12 +20,12 @@
 
       <div class="absolute inset-y-1/2 w-full">
         <div class="-translate-y-1/2">
-          <button id="menu" class="block w-full -ml-4 py-4" :class="{'active': isMainNavigationVisible }" @click="toggleMainNavigation()" title="Toogle Main Navigation">
+          <button class="menu-icon block w-full -ml-4 py-4" :class="{'active': isMainNavigationVisible }" @click="toggleMainNavigation()" title="Toogle Main Navigation">
             <svg class="m-auto" width="24px" height="19px" viewBox="0 0 24 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <polygon id="menu-line-bottom" fill="#FE272D" fill-rule="nonzero" points="24 16 24 19 0 19 0 16"></polygon>
-                <polygon id="menu-line-middle" fill="#FE272D" fill-rule="nonzero" points="24 8 24 11 0 11 0 8"></polygon>
-                <polygon id="menu-line-top" fill="#FE272D" fill-rule="nonzero" points="24 0 24 3 0 3 0 0"></polygon>
+                <polygon class="menu-icon-line-bottom" fill="#FE272D" fill-rule="nonzero" points="24 16 24 19 0 19 0 16"></polygon>
+                <polygon class="menu-icon-line-middle" fill="#FE272D" fill-rule="nonzero" points="24 8 24 11 0 11 0 8"></polygon>
+                <polygon class="menu-icon-line-top" fill="#FE272D" fill-rule="nonzero" points="24 0 24 3 0 3 0 0"></polygon>
               </g>
           </svg>
           </button>
@@ -62,25 +62,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.menu {
-  width: 90px;
-}
-
-#menu-line-top, #menu-line-middle, #menu-line-bottom {
-  transition: all 300ms ease;
-}
-
-#menu.active #menu-line-middle {
-  opacity: 0;
-}
-
-#menu.active #menu-line-bottom {
-  transform: rotate(135deg) translate3d(-14px, -33px, 0px);
-}
-
-#menu.active #menu-line-top {
-  transform: rotate(45deg) translateX(4px) translateY(-4px);
-}
-</style>

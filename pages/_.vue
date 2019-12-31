@@ -1,8 +1,9 @@
 <template>
   <div class="default">
     <Menu :settings=settings></Menu>
+    <MobileMenu :settings=settings></MobileMenu>
 
-    <main id="main" class="mr-menu" :class="{'overflow-hidden h-screen': isMainNavigationVisible}">
+    <main id="main" class="m-menu" :class="{'m-0 overflow-hidden h-screen': isMainNavigationVisible}">
       <component v-if="story.content.component" 
         :key="story.content._uid" 
         :blok="story.content"
@@ -24,6 +25,7 @@
 
 <script>
 import Menu from '@/components/Menu.vue'
+import MobileMenu from '@/components/MobileMenu.vue'
 import Navigation from '@/components/Navigation.vue'
 
 export default {
@@ -40,6 +42,7 @@ export default {
   },
   components: {
     Menu,
+    MobileMenu,
     Navigation
   },
   mounted () {

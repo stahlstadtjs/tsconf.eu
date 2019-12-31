@@ -1,34 +1,33 @@
 <template>
-  <div class="super-hero min-h-screen" v-editable="blok">
-    <div class="container p-8 pt-32 pb-48">
-      <div class="flex">
-        <div class="w-1/2">
-          <h1 class="text-red uppercase font-bold text-6xl leading-tight mb-5">{{blok.headline}}</h1>
+  <div class="super-hero" v-editable="blok">
+    <div class="container pt-12 lg:pb-32 lg:pt-32 lg:px-8">
+      <div class="flex flex-wrap">
+        <div class="lg:w-1/2 px-8">
+          <h1 class="text-red uppercase font-bold text-5xl lg:text-6xl leading-tight mb-5">{{blok.headline}}</h1>
           <p class="text-blue font-bold text-2xl">Linz, AT</p>
           <p class="text-blue font-bold text-2xl">31th March, 2020</p>
 
           <a href="" class="inline-block py-2 px-3 mt-6 bg-red text-white focus:bg-blue hover:bg-blue">Get your ticket!</a>
         </div>
-        <div class="w-1/2">
-          <img loading="lazy" :src="$options.filters.transformImage(blok.image, '500x400')" alt />
-          <div class="text-red font-bold -mt-12 ml-12 text-6xl pl-12 leading-none mb-6 whitespace-pre" v-html="blok.tagline"></div>
+        <div class="countdown pb-12 lg:pb-0 lg:w-1/2 bg-transparent pt-12 mt-12 px-8 lg:pt-0 lg:px-0 lg:mt-0 w-full">
+          <img loading="lazy" class="w-full" :src="$options.filters.transformImage(blok.image, '500x400')" alt />
+          <div class="lg:ml-12 lg:pl-12 lg:mb-6 lg:-mt-12 text-5xl xl:text-6xl text-red font-bold leading-none whitespace-pre -mt-24" v-html="blok.tagline"></div>
 
-          <div class="flex text-center text-white font-bold" v-if="!finished">
-            <div class="w-1/5">
-            </div>
-            <div class="w-1/5">
+          <div class="flex text-center text-white font-bold pt-8" v-if="!finished">
+            <div class="w-1/5 hidden lg:block"></div>
+            <div class="w-1/4 lg:w-1/5">
               <span class="block text-4xl">{{days}}</span>
               <span class="block text-xl">Days</span>
             </div>
-            <div class="w-1/5">
+            <div class="w-1/4 lg:w-1/5">
               <span class="block text-4xl">{{hours}}</span>
               <span class="block text-xl">Hours</span>
             </div>
-            <div class="w-1/5">
+            <div class="w-1/4 lg:w-1/5">
               <span class="block text-4xl">{{minutes}}</span>
               <span class="block text-xl">Minutes</span>
             </div>
-            <div class="w-1/5">
+            <div class="w-1/4 lg:w-1/5">
               <span class="block text-4xl">{{seconds}}</span>
               <span class="block text-xl">Seconds</span>
             </div>
@@ -79,14 +78,23 @@ export default {
 </script>
 
 <style>
-.super-hero {
-  background-image:
+.countdown {
+  background: #133179;
+}
+
+@media (min-width: 1024px) {
+  .super-hero {
+    background-image:
     linear-gradient(
       to right, 
       #ffffff,
       #ffffff 55%,
       #133179 45%,
       #133179
-  );
+    );
+  }
+  .countdown {
+    background: transparent;
+  }
 }
 </style>
