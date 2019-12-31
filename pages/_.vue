@@ -1,23 +1,23 @@
 <template>
   <div class="default">
-    <Menu :settings=settings.content></Menu>
+    <Menu :settings=settings></Menu>
 
     <main id="main" class="content">
       <component v-if="story.content.component" 
         :key="story.content._uid" 
         :blok="story.content"
         :is="story.content.component"></component>
-    </main>
 
-    <!-- Loop through footer components -->
-    <template v-for="blok in settings.content.footer">
-      <component
-        :key="blok._uid"
-        :blok="blok"
-        :is="blok.component"></component>
-    </template>
+      <!-- Loop through footer components -->
+      <template v-for="blok in settings.content.footer">
+        <component
+          :key="blok._uid"
+          :blok="blok"
+          :is="blok.component"></component>
+      </template>
+    </main>
     
-    <Navigation :settings=settings.content></Navigation>
+    <Navigation :settings=settings></Navigation>
 
   </div>
 </template>

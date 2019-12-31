@@ -53,6 +53,11 @@ export default {
   methods: {
     toggleMainNavigation() {
       this.$store.commit('interactions/setMainNavigationVisibility', !this.isMainNavigationVisible)
+      this.$nextTick(() => {
+        if(this.isMainNavigationVisible) {
+          document.querySelectorAll('#navigation a')[0].focus()
+        }
+      }, 0)
     }
   }
 }
