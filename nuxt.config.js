@@ -73,10 +73,10 @@ export default {
         '/code-of-conduct',
         '/faq',
         '/legal-notice',
-        '/speakers',
+        // '/speakers',
         '/venue',
-        '/schedule',
-        '/social'
+        // '/schedule',
+        // '/social'
       ] // adds / directly
 
       callback(null, routes)
