@@ -2,7 +2,7 @@
   <div class="default">
     <Menu :settings=settings></Menu>
 
-    <main id="main" class="content" :class="{'overflow-hidden h-screen': isMainNavigationVisible}">
+    <main id="main" class="mr-menu" :class="{'overflow-hidden h-screen': isMainNavigationVisible}">
       <component v-if="story.content.component" 
         :key="story.content._uid" 
         :blok="story.content"
@@ -93,9 +93,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.content {
-  margin-right: 90px;
-}
-</style>

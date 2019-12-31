@@ -14,6 +14,24 @@
             </li>  
           </ul>  
         </div>
+        <div class="w-1/2 md:w-1/4 px-8">
+          <ul class="flex">
+            <li>
+              <a class="p-2 w-10 mr-4 inline-block
+                border-solid border-red border-2 rounded-full hover:border-white focus:border-white
+                bg-red hover:bg-blue focus:bg-blue" target="_blank" rel="noopener noreferrer" href="https://www.twitter.com/tsconfeu" title="TS:Conf EU - Twitter">
+                <img src="https://a.storyblok.com/f/71805/x/08b62f2c3a/twitter.svg" alt="Twitter logo">
+              </a>
+            </li>
+            <li>
+              <a class="p-2 w-10 mr-4 inline-block
+                border-solid border-red border-2 rounded-full hover:border-white focus:border-white
+                bg-red hover:bg-blue focus:bg-blue" target="_blank" rel="noopener noreferrer" href="https://tsconfeu.slack.com/" title="TS:Conf EU - Slack">
+                <img src="https://a.storyblok.com/f/71805/x/03dc50177f/slack.svg" alt="Slack logo">
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
       <hr class="border-b">
       <div class="p-8 opacity-75">{{blok.copyright}}</div>

@@ -29,3 +29,11 @@
 .-indent-offsite {
   text-indent: -10000px;
 }
+
+.mr-menu {
+  margin-right: 90px;
+}
+
+#navigation .nuxt-link-exact-active {
+  @apply italic underline;
+}
