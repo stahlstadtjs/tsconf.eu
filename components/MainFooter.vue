@@ -11,7 +11,7 @@
             <li v-editable="footerLink"
               v-for="footerLink in footerColumn.links" :key="footerLink._uid" >
               
-              <a v-if="$options.filters.url(footerLink.link).indexOf('http') === 0 || $options.filters.url(footerLink.link).indexOf('mailto')" class="opacity-75 focus:opacity-100 hover:opacity-100 mb-1 block" :href="$options.filters.url(footerLink.link)" :title="footerLink.title">{{footerLink.name}}</a>
+              <a v-if="$options.filters.url(footerLink.link).indexOf('http') === 0 || $options.filters.url(footerLink.link).indexOf('mailto') === 0" class="opacity-75 focus:opacity-100 hover:opacity-100 mb-1 block" :href="$options.filters.url(footerLink.link)" :title="footerLink.title">{{footerLink.name}}</a>
               <nuxt-link v-else class="opacity-75 focus:opacity-100 hover:opacity-100 mb-1 block" :to="$options.filters.url(footerLink.link)" :title="footerLink.title">{{footerLink.name}}</nuxt-link>
 
             </li>  
