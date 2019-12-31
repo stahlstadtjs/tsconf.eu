@@ -39,7 +39,7 @@ export default {
     })
   },
   async fetch(context) {
-    const version = 'draft'
+    const version = 'published'
 
     let [nightlifeRefRes, sightseeingRefRes, sponsorsRefRes, speakersRefRes, ticketsRefRes] = await Promise.all([
       context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'nightlife/', resolve_links:'url', version: version }),
@@ -56,7 +56,7 @@ export default {
     context.store.commit('references/setTickets', ticketsRefRes.data.stories)
   },
   async asyncData (context) {
-    const version = 'draft'
+    const version = 'published'
     const fullSlug = (context.route.path == '/' || context.route.path == '') ? 'home' : context.route.path 
 
     let [pageRes, settingRes] = await Promise.all([

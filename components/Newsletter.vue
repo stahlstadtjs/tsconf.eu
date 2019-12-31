@@ -15,9 +15,7 @@
                 <input class="hidden" type="checkbox" checked="" value="2" name="group[13385][2]" id="mce-group[13385]-13385-1">
                 <input class="hidden" type="text" name="b_f5bed0058ba0f92552c55c755_cc56f4a027" tabindex="-1" value="">
                 <input class="text-blue bg-light-gray w-full py-2 px-3" name="EMAIL" type="email" required="required" placeholder="Enter your E-Mail ..." aria-label="Your E-Mail for Newsletter subscription">
-                <input class="py-2 px-3 bg-red text-white focus:bg-blue hover:bg-blue inline-block" type="submit">
-                  {{blok.cta_text}}
-                </input>
+                <input :value="blok.cta_text" class="py-2 px-3 bg-red text-white focus:bg-blue hover:bg-blue inline-block" type="submit" />
               </div>
             </form>
           </div>
