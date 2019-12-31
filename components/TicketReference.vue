@@ -3,7 +3,6 @@
     
     <div class="container px-8 my-24">
       <h2 class="text-red uppercase font-bold text-6xl">{{blok.headline}}</h2>
-      <tito-widget event="devone/devone-linz-2020"></tito-widget>
       <ul>
         <li v-for="ticket in tickets" :key="ticket._uid" v-editable="ticket.content">
           <div class="flex bg-light-gray mt-6 -mx-8 p-8">
