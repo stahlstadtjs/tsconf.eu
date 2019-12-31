@@ -21,7 +21,7 @@
             <div v-else class="w-2/12 text-center -m-8 bg-red focus:bg-blue hover:bg-blue text-white min-h-full">
               <a class="block p-8" href="">
                 <span class="text-white font-semibold text-3xl uppercase">{{ticket.content.price}}</span>
-                <span class="text-white font-semibold text-1xl uppercase">Ticket </span>
+                <span class="text-white font-semibold text-1xl uppercase">incl. 20% VAT </span>
               </a>
             </div>
           </div>
