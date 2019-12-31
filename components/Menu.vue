@@ -1,7 +1,7 @@
 <template>
   <div class="menu fixed z-50 right-0 inset-y-0 text-center p-4 h-screen bg-white shadow-xl">
     <div class="block">
-      <a class="block" href="/">
+      <nuxt-link class="block" to="/" title="Go to startpage">
         <svg version="1.1" viewBox="0 0 64 94" xmlns="http://www.w3.org/2000/svg">
           <g fill="none" fill-rule="evenodd">
             <g transform="translate(-113 -110)">
@@ -16,7 +16,7 @@
             </g>
           </g>
         </svg>
-      </a>
+      </nuxt-link>
 
       <div class="absolute inset-y-1/2 w-full">
         <div class="-translate-y-1/2">

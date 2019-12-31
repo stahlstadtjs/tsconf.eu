@@ -2,7 +2,7 @@
   <div class="default">
     <Menu :settings=settings></Menu>
 
-    <main id="main" class="content">
+    <main id="main" class="content" :class="{'overflow-hidden h-screen': isMainNavigationVisible}">
       <component v-if="story.content.component" 
         :key="story.content._uid" 
         :blok="story.content"
@@ -27,6 +27,11 @@ import Menu from '@/components/Menu.vue'
 import Navigation from '@/components/Navigation.vue'
 
 export default {
+  computed: {
+    isMainNavigationVisible() {
+      return this.$store.state.interactions.isMainNavigationVisible
+    }
+  },
   data() {
     return {
       story: {},
@@ -53,21 +58,24 @@ export default {
     })
   },
   async fetch(context) {
-    const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
+    if(!context.store.state.references.loaded) {
+      const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
+    
+      let [nightlifeRefRes, sightseeingRefRes, sponsorsRefRes, speakersRefRes, ticketsRefRes] = await Promise.all([
+        context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'nightlife/', resolve_links:'url', version: version }),
+        context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'sightseeing/', resolve_links:'url', version: version }),
+        context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'sponsors/', resolve_links:'url', version: version }),
+        context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'speakers/', resolve_links:'url', version: version }),
+        context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'tickets/', resolve_links:'url', version: version }),
+      ])
 
-    let [nightlifeRefRes, sightseeingRefRes, sponsorsRefRes, speakersRefRes, ticketsRefRes] = await Promise.all([
-      context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'nightlife/', resolve_links:'url', version: version }),
-      context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'sightseeing/', resolve_links:'url', version: version }),
-      context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'sponsors/', resolve_links:'url', version: version }),
-      context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'speakers/', resolve_links:'url', version: version }),
-      context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'tickets/', resolve_links:'url', version: version }),
-    ])
-
-    context.store.commit('references/setNightlife', nightlifeRefRes.data.stories)
-    context.store.commit('references/setSightseeing', sightseeingRefRes.data.stories)
-    context.store.commit('references/setSponsors', sponsorsRefRes.data.stories)
-    context.store.commit('references/setSpeakers', speakersRefRes.data.stories)
-    context.store.commit('references/setTickets', ticketsRefRes.data.stories)
+      context.store.commit('references/setNightlife', nightlifeRefRes.data.stories)
+      context.store.commit('references/setSightseeing', sightseeingRefRes.data.stories)
+      context.store.commit('references/setSponsors', sponsorsRefRes.data.stories)
+      context.store.commit('references/setSpeakers', speakersRefRes.data.stories)
+      context.store.commit('references/setTickets', ticketsRefRes.data.stories)
+      context.store.commit('references/setLoaded', true)
+    }
   },
   async asyncData (context) {
     const version = context.query._storyblok || context.isDev ? 'draft' : 'published'

@@ -3,7 +3,8 @@ export const state = () => ({
   sightseeing: [],
   sponsors: [],
   speakers: [],
-  tickets: []
+  tickets: [],
+  loaded: false
 })
 
 export const mutations = {
@@ -21,5 +22,8 @@ export const mutations = {
   },
   setTickets (state, entries) {
     state.tickets = entries
+  },
+  setLoaded (state, loaded) {
+    state.loaded = loaded
   },
 }
