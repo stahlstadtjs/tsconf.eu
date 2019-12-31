@@ -62,7 +62,7 @@ export default {
   },
   async fetch(context) {
     if(!context.store.state.references.loaded) {
-      const version = context.isDev ? 'draft' : 'published'
+      const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
     
       let [nightlifeRefRes, sightseeingRefRes, sponsorsRefRes, speakersRefRes, ticketsRefRes] = await Promise.all([
         context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'nightlife/', resolve_links:'url', version: version }),
@@ -81,7 +81,7 @@ export default {
     }
   },
   async asyncData (context) {
-    const version = context.isDev ? 'draft' : 'published'
+    const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
     const fullSlug = (context.route.path == '/' || context.route.path == '') ? 'home' : context.route.path 
 
     let [pageRes, settingRes] = await Promise.all([
