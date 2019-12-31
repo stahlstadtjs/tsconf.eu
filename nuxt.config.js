@@ -13,19 +13,11 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
       { name: 'robots', content: 'noindex' }
     ],
-    script: [
-      { src: 'https://js.tito.io/v1', asnyc: true }
-    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel:'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap' },
-      { rel:'stylesheet', type: 'text/css', href: 'https://css.tito.io/v1.1' }
+      { rel:'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap' }
     ]
   },
-  /**
-   *     <script src='https://js.tito.io/v1' async></script>
-    <link rel="stylesheet" type="text/css" href='https://css.tito.io/v1.1' />
-   */
   /*
   ** Customize the progress-bar color
   */
