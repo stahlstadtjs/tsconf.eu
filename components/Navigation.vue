@@ -4,10 +4,14 @@
       <nav class="self-center m-auto">
         <ul>
           <li v-for="navigationLink in settings.content.navigation" :key="navigationLink._uid" v-editable="navigationLink">
-            <nuxt-link class="block text-white uppercase font-bold text-100 leading-tight mb-5 hover:underline focus:underline"
+            <nuxt-link v-if="$options.filters.url(navigationLink.link).indexOf('http') === -1" class="block text-white uppercase font-bold text-100 leading-tight mb-5 hover:underline focus:underline"
               :to="$options.filters.url(navigationLink.link)" :title="navigationLink.title">
               {{navigationLink.text}}
             </nuxt-link>
+            <a v-else class="block text-white uppercase font-bold text-100 leading-tight mb-5 hover:underline focus:underline"
+              :href="$options.filters.url(navigationLink.link)" :title="navigationLink.title">
+              {{navigationLink.text}}
+            </a>
           </li>
         </ul>
       </nav>

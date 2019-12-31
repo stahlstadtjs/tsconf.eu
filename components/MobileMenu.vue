@@ -14,10 +14,9 @@
       </nuxt-link>
     </div>
 
+    <a class="py-2 mr-5 px-3 bg-red text-white focus:bg-blue hover:bg-blue inline-block" :href="settings.content.tito_overview_link" target="_blank" rel="noopener noreferrer">Tickets!</a>
 
-      <a class="py-2 mr-5 px-3 bg-red text-white focus:bg-blue hover:bg-blue inline-block" href="">Tickets!</a>
-
-    <div class="">
+    <div>
       <button class="menu-icon px-4 py-2 block w-full" :class="{'active': isMainNavigationVisible }" @click="toggleMainNavigation()" title="Toogle Main Navigation">
         <svg class="m-auto" width="24px" height="19px" viewBox="0 0 24 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

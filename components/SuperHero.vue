@@ -7,7 +7,7 @@
           <p class="text-blue font-bold text-2xl">Linz, AT</p>
           <p class="text-blue font-bold text-2xl">31th March, 2020</p>
 
-          <a href="" class="inline-block py-2 px-3 mt-6 bg-red text-white focus:bg-blue hover:bg-blue">Get your ticket!</a>
+          <a :href="$options.filters.url(blok.cta_link)" target="_blank" rel="noopener noreferrer" class="inline-block py-2 px-3 mt-6 bg-red text-white focus:bg-blue hover:bg-blue">{{blok.cta_text}}</a>
         </div>
         <div class="countdown pb-12 lg:pb-0 lg:w-1/2 bg-transparent pt-12 mt-12 px-8 lg:pt-0 lg:px-0 lg:mt-0 w-full">
           <img loading="lazy" class="w-full" :src="$options.filters.transformImage(blok.image, '500x400')" alt />

@@ -10,7 +10,10 @@
           <ul>
             <li v-editable="footerLink"
               v-for="footerLink in footerColumn.links" :key="footerLink._uid" >
-              <nuxt-link class="opacity-75 focus:opacity-100 hover:opacity-100 mb-1 block" :to="$options.filters.url(footerLink.link)" :title="footerLink.title">{{footerLink.name}}</nuxt-link>
+              
+              <a v-if="$options.filters.url(footerLink.link).indexOf('http') === 0 || $options.filters.url(footerLink.link).indexOf('mailto')" class="opacity-75 focus:opacity-100 hover:opacity-100 mb-1 block" :href="$options.filters.url(footerLink.link)" :title="footerLink.title">{{footerLink.name}}</a>
+              <nuxt-link v-else class="opacity-75 focus:opacity-100 hover:opacity-100 mb-1 block" :to="$options.filters.url(footerLink.link)" :title="footerLink.title">{{footerLink.name}}</nuxt-link>
+
             </li>  
           </ul>  
         </div>
@@ -33,7 +36,7 @@
           </ul>
         </div>
       </div>
-      <hr class="border-b">
+      <hr class="border-1 opacity-25">
       <div class="p-8 opacity-75">{{blok.copyright}}</div>
     </div>
   </div>

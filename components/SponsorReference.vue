@@ -6,9 +6,9 @@
 
       <h3 class="text-red font-semibold text-1xl">Platinum Sponsor</h3>
       <ul class="flex flex-wrap">
-        <li class="w-48 lg:w-1/5" :class="{ 'md:mt-6': index % 2 === 0 }" v-for="(sponsor, index) in platinumSponsors" :key="sponsor.uuid" v-editable="sponsor.content">
-          <a class="block shadow-lg focus:shadow-xl hover:shadow-xl mr-6 md:mr-8 p-6 rounded-full overflow-hidden" :href="$options.filters.url(sponsor.content.link)">
-            <img loading="lazy" :src="$options.filters.transformImage(sponsor.content.logo, 'fit-in/176x176/filters:fill(FFFFFF)')" :alt="sponsor.name">
+        <li class="w-1/2 md:w-1/4 lg:w-1/5" :class="{ 'md:mt-6': index % 2 === 0 }" v-for="(sponsor, index) in platinumSponsors" :key="sponsor.uuid" v-editable="sponsor.content">
+          <a class="block mr-6" :href="$options.filters.url(sponsor.content.link)">
+            <img class="shadow-lg focus:shadow-xl hover:shadow-xl p-6 rounded-full overflow-hidden" loading="lazy" :src="$options.filters.transformImage(sponsor.content.logo, 'fit-in/176x176/filters:fill(FFFFFF)')" :alt="sponsor.name">
           </a>
         </li>
       </ul>

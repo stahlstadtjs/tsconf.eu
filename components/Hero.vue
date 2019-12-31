@@ -1,13 +1,13 @@
 <template>
   <div class="hero bg-light-gray" v-editable="blok">
     <div class="container px-8 py-24">
-      <div class="flex">
-        <div class="w-2/5">
+      <div class="flex flex-wrap">
+        <div class="w-full lg:w-2/5">
           <h1 class="text-red uppercase font-semibold text-5xl lg:text-6xl">{{blok.headline}}</h1>
           <h2 class="text-red font-semibold leading-tight text-3xl mb-4">{{blok.subheadline}}</h2>
           <p class="text-blue">{{blok.text}}</p>
         </div>
-        <div class="w-3/5 px-12">
+        <div class="w-full pt-12 lg:pt-0 lg:w-3/5 lg:px-12">
           <img loading="lazy" class="float-right" :src="$options.filters.transformImage(blok.image, '600x0')" :alt="blok.alt">
         </div>
       </div>

@@ -29,12 +29,11 @@
               </g>
           </svg>
           </button>
-
         </div>
       </div>
 
       <div class="rotate-270 absolute right-0 bottom-0 mb-10">
-        <a class="py-2 px-3 bg-red text-white focus:bg-blue hover:bg-blue inline-block" href="">Tickets!</a>
+        <a class="py-2 px-3 bg-red text-white focus:bg-blue hover:bg-blue inline-block" :href="settings.content.tito_overview_link" target="_blank" rel="noopener noreferrer">Tickets!</a>
       </div>
     </div>
   </div>

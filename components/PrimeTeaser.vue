@@ -3,15 +3,18 @@
     <div class="container p-8 py-32">
       <div class="flex flex-wrap">
         <div class="w-full md:w-1/2">
-          <img loading="lazy" class="pr-12" :src="$options.filters.transformImage(blok.primary_image, '500x0')" :alt="blok.primary_image_alt" />
+          <img loading="lazy" class="md:pr-12" :src="$options.filters.transformImage(blok.primary_image, '500x0')" :alt="blok.primary_image_alt" />
         </div>
-        <div class="w-full md:w-1/2">
+        <div class="w-full md:w-1/2 -mt-10 lg:mt-0">
           <h2 class="text-red uppercase font-bold text-5xl lg:text-6xl">{{blok.headline}}</h2>
           <p class="text-red font-semibold text-3xl mb-6">{{blok.subheadline}}</p>
           <p class="text-blue text-lg lg:pr-32 mb-6">{{blok.text}}</p>
 
-          <a :href="$options.filters.url(blok.cta_link)" class="py-2 px-3 mt-4 bg-red text-white hover:bg-blue inline-block">{{blok.cta_text}}</a>
-        
+          <template v-if="blok.cta_text">
+            <nuxt-link v-if="$options.filters.url(blok.cta_link).indexOf('http') === -1" class="py-2 px-3 mt-4 bg-red text-white focus:bg-blue hover:bg-blue inline-block" :to="$options.filters.url(blok.cta_link)" :title="blok.cta_text">{{blok.cta_text}}</nuxt-link>
+            <a v-else :href="$options.filters.url(blok.cta_link)" class="py-2 px-3 mt-4 bg-red text-white focus:bg-blue hover:bg-blue inline-block">{{blok.cta_text}}</a>
+          </template>
+          
           <img loading="lazy" class="absolute right-0 bottom-0 hidden lg:block" :src="$options.filters.transformImage(blok.secondary_image, '250x150')"  :alt="blok.secondary_image_alt">
         </div>
       </div>
