@@ -2,7 +2,7 @@
   <div class="footer text-white bg-blue">
     <div class="container mx-auto" v-editable="blok">
       <div class="flex flex-wrap py-12">
-        <div class="w-1/2 md:w-1/4 px-8" v-editable="footerColumn" v-for="footerColumn in blok.columns" :key="footerColumn._uid" >
+        <div class="w-1/2 md:w-1/4 px-8 mb-6" v-editable="footerColumn" v-for="footerColumn in blok.columns" :key="footerColumn._uid" >
           
           <div class="mb-3 font-semibold">{{footerColumn.headline}}</div>
           <p v-if="footerColumn.text" class="pr-4 opacity-75">{{footerColumn.text}}</p>
