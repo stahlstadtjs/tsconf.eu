@@ -19,7 +19,7 @@ export default {
   props: ['blok'],
   computed: {
     factClass() {
-      return 'w-1/' + this.blok.facts.length
+      return 'mb-8 md:w-1/' + this.blok.facts.length + ' w-1/' + Math.round(this.blok.facts.length / 2)
     }
   }
 }

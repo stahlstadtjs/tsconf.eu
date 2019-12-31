@@ -8,7 +8,7 @@
           <p class="text-blue">{{blok.text}}</p>
         </div>
         <div class="w-full pt-12 lg:pt-0 lg:w-3/5 lg:px-12">
-          <img loading="lazy" class="float-right" :src="$options.filters.transformImage(blok.image, '600x0')" :alt="blok.alt">
+          <img loading="lazy" :src="$options.filters.transformImage(blok.image, '600x0')" :alt="blok.alt">
         </div>
       </div>
     </div>
