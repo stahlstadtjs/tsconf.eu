@@ -4,23 +4,20 @@
       <h2 class="text-red uppercase font-bold text-5xl lg:text-6xl">{{blok.headline}}</h2>
       <ul class="hidden md:block">
         <li v-for="ticket in tickets" :key="ticket._uid" v-editable="ticket.content">
-          <div class="flex bg-light-gray mt-6 -mx-8 p-8">
-            <div class="w-1/6">
+          <div class="flex mt-6">
+            <div class="bg-light-gray p-6">
               <h3 class="text-red uppercase font-semibold text-3xl leading-none" v-html="breakEachWord(ticket.name)"></h3>
             </div>
-            <div class="w-3/6 text-blue">
+            <div class="flex-grow text-blue bg-light-gray p-6">
               <div v-html="$md.render(ticket.content.description)"></div>
             </div>
-            <div class="w-4/12">
-
-            </div>
-            <div v-if="ticket.content.sold_out" class="w-2/12 text-center -m-8 min-h-full">
+            <div v-if="ticket.content.sold_out" class="text-center bg-light-gray p-6">
               <div class="text-blue font-semibold text-3xl uppercase p-8">sold<br>out</div>
             </div>
-            <div v-else class="w-2/12 text-center -m-8 bg-red focus:bg-blue hover:bg-blue text-white min-h-full">
-              <a class="block p-8" href="">
-                <span class="text-white font-semibold text-3xl uppercase">{{ticket.content.price}}</span>
-                <span class="text-white font-semibold text-1xl uppercase">incl. 20% VAT </span>
+            <div v-else class="text-center flex bg-red focus:bg-blue hover:bg-blue text-white ">
+              <a class="block p-6" :href="ticket.content.link" target="_blank" rel="noopener noreferrer">
+                <span class="text-white whitespace-pre font-semibold text-3xl uppercase">{{ticket.content.price}}</span>
+                <span class="text-white text-1xl uppercase">incl. 20% VAT</span>
               </a>
             </div>
           </div>
@@ -40,7 +37,7 @@
               <div class="text-blue font-semibold text-3xl uppercase p-8">sold<br>out</div>
             </div>
             <div v-else class="text-center bg-red focus:bg-blue hover:bg-blue text-white">
-              <a class="block p-4 mt-6" href="">
+              <a class="block p-4 mt-6" :href="ticket.content.link" target="_blank" rel="noopener noreferrer">
                 <span class="text-white font-semibold text-3xl uppercase">{{ticket.content.price}}</span>
                 <span class="block text-white font-semibold text-1xl uppercase">incl. 20% VAT </span>
               </a>
