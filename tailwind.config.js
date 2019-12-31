@@ -15,6 +15,11 @@ module.exports = {
       blue: '#133179',
       red: '#fe272d',
       'light-gray': '#f3f4f8'
+    },
+    inset: {
+      '0': 0,
+      'auto': 'auto',
+      '1/2': '50%',
     }
   },
   corePlugins: {

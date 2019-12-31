@@ -1,5 +1,5 @@
 <template>
-  <div class="super-hero" v-editable="blok">
+  <div class="super-hero min-h-screen" v-editable="blok">
     <div class="container p-8 pt-32 pb-48">
       <div class="flex">
         <div class="w-1/2">

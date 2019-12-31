@@ -1,11 +1,11 @@
 <template>
-  <main class="page" v-editable="blok">
+  <div class="page" v-editable="blok">
     <component 
       v-for="blok in blok.body"
       :key="blok._uid"
       :blok="blok"
       :is="blok.component"></component>
-  </main>
+  </div>
 </template>
 
 <script>

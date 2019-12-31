@@ -1,9 +1,13 @@
 <template>
   <div class="default">
-    <component v-if="story.content.component" 
-      :key="story.content._uid" 
-      :blok="story.content"
-      :is="story.content.component"></component>
+    <Menu :settings=settings.content></Menu>
+
+    <main id="main" class="content">
+      <component v-if="story.content.component" 
+        :key="story.content._uid" 
+        :blok="story.content"
+        :is="story.content.component"></component>
+    </main>
 
     <!-- Loop through footer components -->
     <template v-for="blok in settings.content.footer">
@@ -12,16 +16,26 @@
         :blok="blok"
         :is="blok.component"></component>
     </template>
+    
+    <Navigation :settings=settings.content></Navigation>
+
   </div>
 </template>
 
 <script>
+import Menu from '@/components/Menu.vue'
+import Navigation from '@/components/Navigation.vue'
+
 export default {
   data() {
     return {
       story: {},
       settings: {}
     }
+  },
+  components: {
+    Menu,
+    Navigation
   },
   mounted () {
     // Load the JSON from the API
@@ -39,7 +53,7 @@ export default {
     })
   },
   async fetch(context) {
-    const version = 'published'
+    const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
 
     let [nightlifeRefRes, sightseeingRefRes, sponsorsRefRes, speakersRefRes, ticketsRefRes] = await Promise.all([
       context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'nightlife/', resolve_links:'url', version: version }),
@@ -56,7 +70,7 @@ export default {
     context.store.commit('references/setTickets', ticketsRefRes.data.stories)
   },
   async asyncData (context) {
-    const version = 'published'
+    const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
     const fullSlug = (context.route.path == '/' || context.route.path == '') ? 'home' : context.route.path 
 
     let [pageRes, settingRes] = await Promise.all([
@@ -71,3 +85,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.content {
+  margin-right: 90px;
+}
+</style>
