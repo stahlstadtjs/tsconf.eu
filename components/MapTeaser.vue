@@ -1,7 +1,7 @@
 <template>
   <div class="bg-light-gray" v-editable="blok">
     <div class="container px-8 py-24">
-      <h2 class="text-red uppercase font-semibold text-5xl lg:text-6xl mb-4">{{blok.headline}}</h2>
+      <h2 class="text-red uppercase font-semibold text-4xl sm:text-5xl lg:text-6xl mb-4">{{blok.headline}}</h2>
       <div class="relative hidden lg:block">
         <img :src="blok.gmaps_image" :alt="blok.gmaps_image_alt">
         <div class="text-red text-3xl font-semibold whitespace-pre-line my-4">{{blok.address}}</div>

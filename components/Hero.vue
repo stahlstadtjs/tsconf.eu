@@ -3,7 +3,7 @@
     <div class="container px-8 py-24">
       <div class="flex flex-wrap">
         <div class="w-full lg:w-2/5">
-          <h1 class="text-red uppercase font-semibold text-5xl lg:text-6xl">{{blok.headline}}</h1>
+          <h1 class="text-red uppercase font-semibold text-4xl sm:text-5xl lg:text-6xl">{{blok.headline}}</h1>
           <h2 class="text-red font-semibold leading-tight text-3xl mb-4">{{blok.subheadline}}</h2>
           <p class="text-blue">{{blok.text}}</p>
         </div>

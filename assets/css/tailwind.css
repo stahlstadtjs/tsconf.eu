@@ -74,5 +74,5 @@
 }
 
 #navigation .nuxt-link-exact-active {
-  @apply italic underline;
+  @apply italic underline opacity-25;
 }

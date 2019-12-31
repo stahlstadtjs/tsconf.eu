@@ -5,7 +5,7 @@
         <h2 class="text-red font-semibold text-3xl mb-6" v-if="blok.headline">{{blok.headline}}</h2>
         <ul class="flex flex-wrap">
           <li :class="factClass" v-for="fact in blok.facts" :key="fact._uid" v-editable="fact">
-            <span class="block text-5xl lg:text-6xl font-bold text-blue">{{fact.value}}</span>
+            <span class="block text-4xl sm:text-5xl lg:text-6xl font-bold text-blue">{{fact.value}}</span>
             <span class="block text-2xl font-bold text-blue">{{fact.key}}</span>
           </li>
         </ul>

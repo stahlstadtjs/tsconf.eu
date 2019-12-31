@@ -1,7 +1,7 @@
 <template>
   <div class="ticket-reference" v-editable="blok">
     <div class="container px-8 my-24">
-      <h2 class="text-red uppercase font-bold text-5xl lg:text-6xl">{{blok.headline}}</h2>
+      <h2 class="text-red uppercase font-bold text-4xl sm:text-5xl lg:text-6xl">{{blok.headline}}</h2>
       <ul class="hidden md:block">
         <li v-for="ticket in tickets" :key="ticket._uid" v-editable="ticket.content">
           <div class="flex mt-6">
