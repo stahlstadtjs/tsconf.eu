@@ -12,7 +12,7 @@
               <div v-html="$md.render(ticket.content.description)"></div>
             </div>
             <div v-if="ticket.content.sold_out" class="text-center bg-light-gray p-6">
-              <div class="text-blue font-semibold text-3xl uppercase p-8">sold<br>out</div>
+              <div class="text-blue font-semibold text-3xl uppercase">sold<br>out</div>
             </div>
             <div v-else class="text-center flex bg-red focus:bg-blue hover:bg-blue text-white ">
               <a class="block p-6" :href="ticket.content.link" target="_blank" rel="noopener noreferrer">
