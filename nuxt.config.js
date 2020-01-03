@@ -84,18 +84,6 @@ export default {
       const version = 'published'
       let cache_version = 0
 
-        
-      // other routes that are not in Storyblok with their slug.
-      let routes = ['/',
-        '/code-of-conduct',
-        '/faq',
-        '/legal-notice',
-        // '/speakers',
-        '/venue',
-        // '/schedule',
-        // '/social'
-      ] // adds / directly
-
       function calculateLeft(release) {
         const left = release.quantity - release.tickets_count
         if(left > 15) {
@@ -124,6 +112,15 @@ export default {
               left: calculateLeft(release)
             }
           })
+        // other routes that are not in Storyblok with their slug.
+        let routes = [
+          { route: '/', payload: { tickets: releases} },
+          { route: '/code-of-conduct', payload: {} },
+          { route: '/faq', payload: {} },
+          { route: '/legal-notice', payload: {} },
+          { route: '/venue', payload: {} },
+        ] // adds / directly
+        // speakers, schedule, social
         console.log(releases)
         callback(null, routes)
       })
