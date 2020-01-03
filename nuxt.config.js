@@ -98,31 +98,35 @@ export default {
           'Content-Type': 'application/json'
         }
       }).then(data => {
-        const titoTickets = data.data.event
-          .releases.filter(release => !release.secret)
-          .sort((a,b) => a.position - b.position)
-          .map(release => {
-            return {
-              title: release.title,
-              description: release.description,
-              slug: release.slug,
-              price: release.price,
-              url: release.share_url,
-              sold_out: release.sold_out,
-              left: calculateLeft(release)
-            }
-          })
-        
-        // other routes that are not in Storyblok with their slug.
-        let routes = [
-          { route: '/', payload: { tickets: titoTickets } },
-          { route: '/code-of-conduct', payload: {} },
-          { route: '/faq', payload: {} },
-          { route: '/legal-notice', payload: {} },
-          { route: '/venue', payload: {} },
-        ] // adds / directly
-        // speakers, schedule, social
-        callback(null, routes)
+        try {
+          const titoTickets = data.data.event
+            .releases.filter(release => !release.secret)
+            .sort((a,b) => a.position - b.position)
+            .map(release => {
+              return {
+                title: release.title,
+                description: release.description,
+                slug: release.slug,
+                price: release.price,
+                url: release.share_url,
+                sold_out: release.sold_out,
+                left: calculateLeft(release)
+              }
+            })
+          
+          // other routes that are not in Storyblok with their slug.
+          let routes = [
+            { route: '/', payload: { tickets: titoTickets } },
+            { route: '/code-of-conduct', payload: {} },
+            { route: '/faq', payload: {} },
+            { route: '/legal-notice', payload: {} },
+            { route: '/venue', payload: {} },
+          ] // adds / directly
+          // speakers, schedule, social
+          callback(null, routes)
+        } catch(e) {
+          callback(e)
+        }
       })
     },
   },
