@@ -3,43 +3,45 @@
     <div class="container px-8 my-24">
       <h2 class="text-red uppercase font-bold text-4xl sm:text-5xl lg:text-6xl">{{blok.headline}}</h2>
       <ul class="hidden md:block">
-        <li v-for="ticket in tickets" :key="ticket._uid" v-editable="ticket.content">
-          <div class="flex mt-6">
+        <li v-for="ticket in tickets" :key="ticket.slug">
+          <div class="flex mt-6" :class="{'opacity-50': ticket.sold_out}">
             <div class="bg-light-gray p-6">
-              <h3 class="text-red uppercase font-semibold text-3xl leading-none" v-html="breakEachWord(ticket.name)"></h3>
+              <h3 class="text-red uppercase font-semibold text-3xl leading-none w-165" v-html="breakEachWord(ticket.title)"></h3>
             </div>
             <div class="flex-grow text-blue bg-light-gray p-6">
-              <div v-html="$md.render(ticket.content.description)"></div>
+              <div v-html="$md.render(ticket.description)"></div>
             </div>
-            <div v-if="ticket.content.sold_out" class="text-center bg-light-gray p-6">
+            <div v-if="ticket.sold_out" class="text-center bg-light-gray">
               <div class="text-blue font-semibold text-3xl uppercase p-8">sold<br>out</div>
             </div>
-            <div v-else class="text-center flex bg-red focus:bg-blue hover:bg-blue text-white ">
-              <a class="block p-6" :href="ticket.content.link" target="_blank" rel="noopener noreferrer">
-                <span class="text-white whitespace-pre font-semibold text-3xl uppercase">{{ticket.content.price}}</span>
+            <div v-else class="text-center flex bg-red focus:bg-blue hover:bg-blue text-white">
+              <a class="block p-6 w-165" :href="ticket.url" target="_blank" rel="noopener noreferrer">
+                <span class="text-white whitespace-pre font-semibold text-3xl uppercase">€ {{ticket.price}}</span>
                 <span class="text-white text-1xl uppercase">incl. 20% VAT</span>
+                <span v-if="ticket.left > -1" class="text-white font-bold text-1xl uppercase block">{{ticket.left}} tickets left</span>
               </a>
             </div>
           </div>
         </li>
       </ul>
       <ul class="block md:hidden mt-8">
-        <li v-for="ticket in tickets" :key="ticket._uid" v-editable="ticket.content">
-          <div class="bg-light-gray p-5">
-            <h3 class="text-red uppercase font-semibold text-3xl mb-2">{{ticket.name}}</h3>
+        <li v-for="ticket in tickets" :key="ticket.slug">
+          <div class="bg-light-gray p-5" :class="{'opacity-50': ticket.sold_out}">
+            <h3 class="text-red uppercase font-semibold text-3xl mb-2">{{ticket.title}}</h3>
             <hr class="border-1 bg-blue opacity-25 mb-2">
 
             <div class="text-blue">
-              <div v-html="$md.render(ticket.content.description)"></div>
+              <div v-html="$md.render(ticket.description)"></div>
             </div>
 
-            <div v-if="ticket.content.sold_out" class="text-center">
+            <div v-if="ticket.sold_out" class="text-center">
               <div class="text-blue font-semibold text-3xl uppercase p-8">sold<br>out</div>
             </div>
             <div v-else class="text-center bg-red focus:bg-blue hover:bg-blue text-white">
-              <a class="block p-4 mt-6" :href="ticket.content.link" target="_blank" rel="noopener noreferrer">
-                <span class="text-white font-semibold text-3xl uppercase">{{ticket.content.price}}</span>
-                <span class="block text-white font-semibold text-1xl uppercase">incl. 20% VAT </span>
+              <a class="block p-4 mt-6" :href="ticket.url" target="_blank" rel="noopener noreferrer">
+                <span class="text-white font-semibold text-3xl uppercase">€ {{ticket.price}}</span>
+                <span class="block text-white text-1xl uppercase">incl. 20% VAT </span>
+                <span v-if="ticket.left > -1" class="text-white font-bold text-1xl uppercase block">{{ticket.left}} tickets left</span>
               </a>
             </div>
           </div>
@@ -62,6 +64,7 @@ export default {
   },
   methods: {
    breakEachWord(string) {
+     string = string + ' ticket'
      return string.replace(/ /g, '<br>')
    } 
   }

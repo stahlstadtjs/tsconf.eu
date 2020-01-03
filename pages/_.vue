@@ -64,19 +64,22 @@ export default {
     if(!context.store.state.references.loaded) {
       const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
     
-      let [nightlifeRefRes, sightseeingRefRes, sponsorsRefRes, speakersRefRes, ticketsRefRes] = await Promise.all([
+      let [nightlifeRefRes, sightseeingRefRes, sponsorsRefRes, speakersRefRes] = await Promise.all([
         context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'nightlife/', resolve_links:'url', version: version }),
         context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'sightseeing/', resolve_links:'url', version: version }),
         context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'sponsors/', resolve_links:'url', version: version }),
         context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'speakers/', resolve_links:'url', version: version }),
-        context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'tickets/', resolve_links:'url', version: version }),
       ])
 
       context.store.commit('references/setNightlife', nightlifeRefRes.data.stories)
       context.store.commit('references/setSightseeing', sightseeingRefRes.data.stories)
       context.store.commit('references/setSponsors', sponsorsRefRes.data.stories)
       context.store.commit('references/setSpeakers', speakersRefRes.data.stories)
-      context.store.commit('references/setTickets', ticketsRefRes.data.stories)
+      
+      if (context.payload && context.payload.tickets) {
+        context.store.commit('references/setTickets', context.payload.tickets)      
+      }
+
       context.store.commit('references/setLoaded', true)
     }
   },

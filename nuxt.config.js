@@ -98,7 +98,7 @@ export default {
           'Content-Type': 'application/json'
         }
       }).then(data => {
-        const releases = data.data.event
+        const titoTickets = data.data.event
           .releases.filter(release => !release.secret)
           .sort((a,b) => a.position - b.position)
           .map(release => {
@@ -112,16 +112,16 @@ export default {
               left: calculateLeft(release)
             }
           })
+        
         // other routes that are not in Storyblok with their slug.
         let routes = [
-          { route: '/', payload: { tickets: releases} },
+          { route: '/', payload: { tickets: titoTickets } },
           { route: '/code-of-conduct', payload: {} },
           { route: '/faq', payload: {} },
           { route: '/legal-notice', payload: {} },
           { route: '/venue', payload: {} },
         ] // adds / directly
         // speakers, schedule, social
-        console.log(releases)
         callback(null, routes)
       })
     },
