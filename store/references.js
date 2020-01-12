@@ -3,7 +3,8 @@ export const state = () => ({
   nightlife: [],
   sightseeing: [],
   sponsors: [],
-  speakers: [],
+  workshops: [],
+  talks: [],
   tickets: [{
       title: 'Early Bird',
       description: 'A limited selection of early bird tickets. Ticket price includes all refreshments and food during the conference, as well as entrance to the after-show get-together.',
@@ -36,8 +37,11 @@ export const mutations = {
   setSponsors (state, entries) {
     state.sponsors = entries
   },
-  setSpeakers (state, entries) {
-    state.speakers = entries
+  setWorkshops (state, entries) {
+    state.workshops = entries
+  },
+  setTalks (state, entries) {
+    state.talks = entries
   },
   setTickets (state, entries) {
     state.tickets = entries

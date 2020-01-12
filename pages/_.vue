@@ -66,16 +66,18 @@ export default {
     if(context.store.state.references.loaded !== '1') {
       const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
     
-      let [settingsRefRes, speakersRefRes, sponsorsRefRes, nightlifeRefRes, sightseeingRefRes, ] = await Promise.all([
+      let [settingsRefRes, talksRefRes, workshopsRefRes, sponsorsRefRes, nightlifeRefRes, sightseeingRefRes, ] = await Promise.all([
         context.app.$storyapi.get(`cdn/stories/settings`, { resolve_links:'url', version: version }),
-        context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'speakers/', resolve_links:'url', version: version }),
+        context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'talks/', resolve_links:'url', resolve_relations:'talk.speakers', version: version }),
+        context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'workshops/', resolve_links:'url', resolve_relations:'workshop.speakers', version: version }),
         context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'sponsors/', resolve_links:'url', version: version }),
         context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'nightlife/', resolve_links:'url', version: version }),
         context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'sightseeing/', resolve_links:'url', version: version }),
       ])
 
       context.store.commit('references/setSettings', settingsRefRes.data.story.content)
-      context.store.commit('references/setSpeakers', speakersRefRes.data.stories)
+      context.store.commit('references/setTalks', talksRefRes.data.stories)
+      context.store.commit('references/setWorkshops', workshopsRefRes.data.stories)
       context.store.commit('references/setSponsors', sponsorsRefRes.data.stories)
       context.store.commit('references/setNightlife', nightlifeRefRes.data.stories)
       context.store.commit('references/setSightseeing', sightseeingRefRes.data.stories)
