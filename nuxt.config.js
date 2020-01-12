@@ -121,6 +121,9 @@ export default {
             { route: '/faq', payload: {} },
             { route: '/legal-notice', payload: {} },
             { route: '/venue', payload: {} },
+            { route: '/workshops', payload: {} },
+            { route: '/talks', payload: {} },
+            { route: '/speakers', payload: {} },
           ] // adds / directly
           // speakers, schedule, social
           callback(null, routes)

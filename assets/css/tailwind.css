@@ -10,9 +10,6 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* headline: text-red font-bold text-6xl uppercase */
-/* subheadline: text-red font-semibold text-3xl */
-
 .container {
   max-width: 1184px;
 }
@@ -33,10 +30,9 @@
   width: 165px;
 }
 
-
 .menu-desktop {
   width: 90px;
-  display: none;
+  @apply hidden;
 }
 
 .m-menu {
@@ -45,16 +41,62 @@
 
 @media (min-width: 768px) {
   .menu-desktop {
-    display: block;
+    @apply block;
   }
   .menu-mobile {
-    display: none;
+    @apply hidden;
   }
   .m-menu {
     margin-top:0px;
     margin-right: 90px;
   }
 }
+
+/**
+* Headlines
+*/
+
+.headline {
+  @apply text-red uppercase font-bold text-4xl;
+}
+
+.subheadline {
+  @apply text-red font-semibold text-2xl;
+}
+
+@screen lg {
+  .headline {
+    @apply text-6xl;
+  }
+}
+
+@screen sm {
+  .headline {
+    @apply text-5xl;
+  }
+  .subheadline {
+    @apply text-3xl;
+  }
+}
+
+/**
+* Image Hover Coloring 
+* Usage: `div.image-blue>img`
+*/
+
+.image-blue {
+  @apply relative;
+}
+.image-blue:after {
+  content: '';
+  mix-blend-mode: color;
+  transition: all 0.4s ease;
+  @apply rounded-full absolute top-0 left-0 bottom-0 right-0 bg-blue;
+}
+.image-blue:hover:after {
+  @apply bg-red;
+}
+
 
 /**
 * Menu Icon SVG animation

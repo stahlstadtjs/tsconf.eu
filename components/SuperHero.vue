@@ -3,7 +3,7 @@
     <div class="container pt-12 lg:pb-32 lg:pt-32 lg:px-8">
       <div class="flex flex-wrap">
         <div class="lg:w-1/2 px-8">
-          <h1 class="text-red uppercase font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-5">{{blok.headline}}</h1>
+          <h1 class="headline leading-tight mb-5">{{blok.headline}}</h1>
           <p class="text-blue font-bold text-2xl">Linz, AT</p>
           <p class="text-blue font-bold text-2xl">31th March, 2020</p>
 
