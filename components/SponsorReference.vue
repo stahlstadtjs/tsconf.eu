@@ -1,8 +1,8 @@
 <template>
   <div class="sponsor-reference" v-editable="blok">
     <div class="container p-8 py-32">
-      <h2 class="text-red font-bold text-4xl sm:text-5xl lg:text-6xl uppercase text-center">{{blok.headline}}</h2>
-      <p class="text-red font-semibold text-3xl mb-12 max-w-lg text-center mx-auto">{{blok.subheadline}}</p>
+      <h2 class="headline uppercase text-center">{{blok.headline}}</h2>
+      <p class="subheadline mb-12 max-w-lg text-center mx-auto">{{blok.subheadline}}</p>
 
       <h3 class="text-red font-semibold text-1xl">Platinum Sponsor</h3>
       <ul class="flex flex-wrap">
