@@ -4,8 +4,7 @@
       <div class="flex flex-wrap">
         <div class="lg:w-1/2 px-8">
           <h1 class="text-red uppercase font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-5">{{blok.headline}}</h1>
-          <p class="text-blue font-bold text-2xl">Linz, AT</p>
-          <p class="text-blue font-bold text-2xl">31th March, 2020</p>
+          <p v-for="line in info" :key="line" class="text-blue font-bold text-2xl">{{line}}</p>
 
           <a :href="$options.filters.url(blok.cta_link)" target="_blank" rel="noopener noreferrer" class="inline-block py-2 px-3 mt-6 bg-red text-white focus:bg-blue hover:bg-blue">{{blok.cta_text}}</a>
         </div>
@@ -48,6 +47,11 @@ export default {
       minutes: '',
       seconds: '',
       finished: false
+    }
+  },
+  computed: {
+    info() {
+      return this.blok.info.split('\n')
     }
   },
   mounted() {
