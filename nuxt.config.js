@@ -47,6 +47,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    'plugins/breakEachWord.ts',
     'plugins/transformImage.ts',
     'plugins/components.ts',
     'plugins/url.ts'

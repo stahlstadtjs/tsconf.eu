@@ -10,13 +10,13 @@
         <div class="w-full lg:w-2/3">
           <ul class="flex flex-wrap">
             <li class="w-full sm:w-1/2" v-for="speaker in speakers" :key="speaker.uuid">
-              <div class="px-10 lg:px-0 lg:pl-20 pb-12">
+              <nuxt-link class="px-10 lg:px-0 lg:pl-20 pb-12 block" :to="$options.filters.url(speaker.full_slug)">
                 <div class="image-blue">
                   <img class="rounded-full" loading="lazy" :src="$options.filters.transformImage(speaker.content.image, '400x400/filters:grayscale()/')" :alt="speaker.content.name">
                 </div>
-                <h3 class="relative text-red font-semibold uppercase text-3xl -mt-24 p-4 leading-none bg-white inline-block" v-html="breakEachWord(speaker.content.name)"></h3>
+                <h3 class="relative text-red font-semibold uppercase text-3xl -mt-24 p-4 leading-none bg-white inline-block" v-html="$options.filters.breakEachWord(speaker.content.name)"></h3>
                 <p class="pt-4 text-blue text-lg">{{speaker.content.tag}}</p>
-              </div>
+              </nuxt-link>
             </li>
             <li class="w-full sm:w-1/2">
               <div class="px-10 lg:px-0 lg:pl-20 pb-12">
@@ -45,11 +45,6 @@ export default {
       return this.$store.state.references.talks.reduce((acc, el) => {
         return acc.concat(el.content.speakers)
       }, [])
-    }
-  },
-  methods: {
-    breakEachWord(string) {
-      return string.replace(/ /g, '<br>')
     }
   }
 }

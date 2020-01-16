@@ -93,7 +93,7 @@ export default {
     const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
     const fullSlug = (context.route.path == '/' || context.route.path == '') ? 'home' : context.route.path 
 
-    let pageRes = await context.app.$storyapi.get(`cdn/stories/${fullSlug}`, { resolve_links:'url', version: version })
+    let pageRes = await context.app.$storyapi.get(`cdn/stories/${fullSlug}`, { resolve_links:'url', resolve_relations:'workshop.speakers', version: version })
 
     return {
        story: pageRes.data.story

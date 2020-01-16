@@ -3,6 +3,7 @@ import Vue from 'vue'
 // Content Types
 import Page from '@/components/content-types/Page.vue'
 import Speaker from '@/components/content-types/Speaker.vue'
+import Workshop from '@/components/content-types/Workshop.vue'
 
 // Single Use and Layout Components
 import MainFooter from '@/components/MainFooter.vue'
@@ -28,11 +29,17 @@ import TalkReference from '@/components/TalkReference.vue'
 import SponsorReference from '@/components/SponsorReference.vue'
 import TicketReference from '@/components/TicketReference.vue'
 
+// Art Elements
+import RedLines from '@/components/art-elements/RedLines.vue'
+
+
 /* Map components to names in Storyblok */
 // TODO: Use webpack require.context to import automatically
 
 Vue.component('page', Page)
 Vue.component('speaker', Speaker)
+Vue.component('workshop', Workshop)
+
 
 // Single Use and Layout Components
 Vue.component('main-footer', MainFooter)

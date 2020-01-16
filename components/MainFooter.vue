@@ -26,6 +26,13 @@
                 <img src="https://a.storyblok.com/f/71805/x/08b62f2c3a/twitter.svg" alt="Twitter logo">
               </a>
             </li>
+            <li>
+              <a class="p-2 w-10 mr-4 inline-block
+                border-solid border-red border-2 rounded-full hover:border-white focus:border-white
+                bg-red hover:bg-blue focus:bg-blue" target="_blank" rel="noopener noreferrer" href="https://www.github.com/stahlstadtjs/tsconf.eu" title="TS:Conf EU - Github">
+                <img src="https://a.storyblok.com/f/71805/x/86a88f1326/github.svg" alt="Github logo">
+              </a>
+            </li>
           </ul>
         </div>
       </div>
