@@ -8,7 +8,7 @@
             <img class="rounded-full" loading="lazy" :src="$options.filters.transformImage(blok.image, '500x500/filters:grayscale()/')" :alt="blok.name">
           </div>
         </div>
-        <div class="w-full lg:w-3/5 lg:pt-20 pl-6 pr-12 bg-blue">
+        <div class="w-full lg:w-3/5 lg:pt-20 pl-6 pr-12 bg-blue z-10">
           <h1 class="headline">{{blok.name}}</h1>
           <h2 class="text-white pb-6">{{blok.tag}}</h2>
           <p class="text-3xl">{{blok.bio}}</p>
