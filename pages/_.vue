@@ -84,6 +84,13 @@ export default {
       
       if (context.payload && context.payload.tickets) {
         context.store.commit('references/setTickets', context.payload.tickets)      
+      } else {
+        try {
+          const ticketData = await fetch('/tickets-data.json').then(res => res.json())
+          context.store.commit('references/setTickets', ticketData)
+        } catch(e) {
+          // do nothing, fallback exists
+        }
       }
 
       context.store.commit('references/setLoaded', '1')

@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt generate",
+    "build": "nuxt generate && node post-generate.js",
     "start": "nuxt start",
     "old-build": "nuxt build",
     "generate": "nuxt generate"

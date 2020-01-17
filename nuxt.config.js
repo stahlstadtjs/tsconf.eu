@@ -1,4 +1,4 @@
-const axios = require('axios')
+const { download, parseTickets } = require('./download')
 
 export default {
   mode: 'universal',
@@ -85,35 +85,10 @@ export default {
       const version = 'published'
       let cache_version = 0
 
-      function calculateLeft(release) {
-        const left = release.quantity - release.tickets_count
-        if(left > 15) {
-          return -1
-        }
-        return left
-      }
-
-      axios.get('https://api.tito.io/v3/scriptconf/tsconf-eu-2020/', {
-        headers: {
-          'Authorization': `Token token=${process.env.TITO_TOKEN}`,
-          'Content-Type': 'application/json'
-        }
-      }).then(data => {
+      download().then(data => {
         try {
-          const titoTickets = data.data.event
-            .releases.filter(release => !release.secret)
-            .sort((a,b) => a.position - b.position)
-            .map(release => {
-              return {
-                title: release.title,
-                description: release.description,
-                slug: release.slug,
-                price: release.price,
-                url: release.share_url,
-                sold_out: release.sold_out,
-                left: calculateLeft(release)
-              }
-            })
+
+          const titoTickets = parseTickets(data)
           
           // other routes that are not in Storyblok with their slug.
           let routes = [
