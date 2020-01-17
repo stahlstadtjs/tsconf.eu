@@ -123,8 +123,15 @@ export default {
             { route: '/legal-notice', payload: {} },
             { route: '/venue', payload: {} },
             { route: '/workshops', payload: {} },
+            { route: '/workshops/advanced-black-magic-with-typescript', payload: {} },
+            { route: '/workshops/tdd-with-typescript', payload: {} },
             { route: '/talks', payload: {} },
             { route: '/speakers', payload: {} },
+            { route: '/speakers/anders-hejlsberg', payload: {} },
+            { route: '/speakers/liliana-kastilio', payload: {} },
+            { route: '/speakers/bert-belder', payload: {} },
+            { route: '/speakers/peter-kroener', payload: {} },
+            { route: '/speakers/david-tanzer', payload: {} },
           ] // adds / directly
           // speakers, schedule, social
           callback(null, routes)
