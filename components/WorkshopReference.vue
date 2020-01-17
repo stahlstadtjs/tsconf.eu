@@ -46,14 +46,14 @@
                 <div class="flex">
                   <div class="w-1/2 mr-4">
                     <div class="text-center text-blue border-blue focus:bg-blue hover:bg-blue hover:text-white focus:text-white">
-                      <a class="block p-5 mt-6 border-2" :href="$options.filters.url(workshop.full_slug)" target="_blank" rel="noopener noreferrer">
+                      <a class="block p-5 mt-6 border-2" :href="workshop.full_slug" target="_blank" rel="noopener noreferrer">
                         <span class="leading-tight text-2xl">Workshop<br>Details</span>
                       </a>
                     </div>
                   </div>
                   <div class="w-1/2 ml-4">
                     <div class="text-center bg-red focus:bg-blue hover:bg-blue text-white">
-                      <a class="block p-4 mt-6" :href="$options.filters.url(workshop.content.link)" target="_blank" rel="noopener noreferrer">
+                      <a class="block p-4 mt-6" :href="workshop.content.link" target="_blank" rel="noopener noreferrer">
                         <span class="text-white font-semibold text-3xl uppercase">{{workshop.content.price}}</span>
                         <span class="block text-white text-1xl uppercase">incl. 20% VAT </span>
                       </a>

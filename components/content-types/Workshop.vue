@@ -9,7 +9,7 @@
           <h3 class="relative text-red font-semibold uppercase text-3xl -mt-24 p-4 leading-none bg-white inline-block" v-html="$options.filters.breakEachWord(blok.speakers[0].content.name)"></h3>
         
           <div class="pt-12"><span class="font-bold text-4xl">{{blok.price}}</span> inclusive 20% VAT</div>
-          <a class="px-6 py-4 mt-4 bg-red text-white text-center focus:bg-white hover:bg-white focus:text-blue hover:text-blue block" :to="$options.filters.url(blok.link)">Secure your ticket</a>
+          <a class="px-6 py-4 mt-4 bg-red text-white text-center focus:bg-white hover:bg-white focus:text-blue hover:text-blue block" :href="blok.link">Secure your ticket</a>
           <div class="text-sm pt-3">All workshops include a small breakfast, lunch, coffee, drinks, and snacks during the day.<br>Combi-Tickets are available</div>
         </div>
         <div class="w-full sm:w-2/3 p-6 pl-6 md:pl-12 ">
@@ -29,7 +29,7 @@
         <h3 class="relative text-red font-semibold uppercase text-3xl -mt-24 p-4 leading-none bg-white inline-block" v-html="$options.filters.breakEachWord(blok.speakers[0].content.name)"></h3>
       
         <div class="pt-12"><span class="font-bold text-4xl">{{blok.price}}</span> inclusive 20% VAT</div>
-        <a class="px-6 py-4 mt-4 bg-red text-white text-center focus:bg-white hover:bg-white focus:text-blue hover:text-blue block" :to="$options.filters.url(blok.link)">Secure your ticket</a>
+        <a class="px-6 py-4 mt-4 bg-red text-white text-center focus:bg-white hover:bg-white focus:text-blue hover:text-blue block" :href="blok.link">Secure your ticket</a>
         <div class="text-sm pt-3">All workshops include a small breakfast, lunch, coffee, drinks, and snacks during the day.<br>Combi-Tickets are available</div>
       </div>
 
