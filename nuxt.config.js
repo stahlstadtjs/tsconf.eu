@@ -125,7 +125,6 @@ export default {
             { route: '/workshops', payload: {} },
             { route: '/workshops/advanced-black-magic-with-typescript', payload: {} },
             { route: '/workshops/tdd-with-typescript', payload: {} },
-            { route: '/talks', payload: {} },
             { route: '/speakers', payload: {} },
             { route: '/speakers/anders-hejlsberg', payload: {} },
             { route: '/speakers/liliana-kastilio', payload: {} },
