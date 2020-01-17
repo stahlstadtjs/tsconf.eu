@@ -28,8 +28,6 @@ import Menu from '@/components/Menu.vue'
 import MobileMenu from '@/components/MobileMenu.vue'
 import Navigation from '@/components/Navigation.vue'
 
-import axios from 'axios'
-
 export default {
   computed: {
     isMainNavigationVisible() {
@@ -84,13 +82,9 @@ export default {
       context.store.commit('references/setNightlife', nightlifeRefRes.data.stories)
       context.store.commit('references/setSightseeing', sightseeingRefRes.data.stories)
 
-      try {
-        const ticketData = await axios.get(`/tickets-data.json`)
-        context.store.commit('references/setTickets', ticketData)
-      } catch(e) {}
-
       if (context.payload && context.payload.tickets) {
-        context.store.commit('references/setTickets', context.payload.tickets)      
+        context.store.commit('references/setTickets', context.payload.tickets)
+        context.store.commit('references/setTicketsLoaded', '1')
       }
 
       context.store.commit('references/setLoaded', '1')

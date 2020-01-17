@@ -57,6 +57,15 @@
 <script>
 export default {
   props: ['blok'],
+  async mounted() {
+    if(this.$store.state.references.ticketsLoaded !== '1') {
+      try {
+        const ticketData = await fetch(`${window.location.origin}/ticket-data.json`)
+        this.$store.commit('references/setTickets', ticketData)
+        this.$store.commit('references/setTicketsLoaded', '1')
+      } catch(e) {}
+    }
+  },
   computed: {
     tickets() {
       return this.$store.state.references.tickets
