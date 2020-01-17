@@ -1,6 +1,6 @@
 <template>
   <div class="speaker text-white bg-blue" v-editable="blok">
-    <div class="container mx-auto pt-24 min-h-screen">
+    <div class="container mx-auto pt-24">
       <div class="flex flex-wrap">
         <div class="w-full lg:w-2/5 p-6 relative">  
           <img class="absolute top-1/2 -m-32 z-0" src="https://img2.storyblok.com/f/71805/948x950/e98fe93691/a_stilelement_pixelkreis-red-2x-2.png">
