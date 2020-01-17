@@ -60,6 +60,7 @@ export default {
   computed: {
     tickets() {
       return this.$store.state.references.tickets
+        .filter(ticket => !ticket.title.toLowerCase().contains('workshop'))
     }
   }
 }
