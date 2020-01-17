@@ -57,7 +57,7 @@
 <script>
 export default {
   props: ['blok'],
-  async mounted() {
+  async beforeCreate() {
     if(this.$store.state.references.ticketsLoaded !== '1') {
       try {
         const ticketData = await fetch(`${window.location.origin}/ticket-data.json`)
