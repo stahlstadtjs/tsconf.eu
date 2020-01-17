@@ -60,7 +60,7 @@ export default {
   async beforeCreate() {
     if(this.$store.state.references.ticketsLoaded !== '1') {
       try {
-        const ticketData = await fetch(`${window.location.origin}/ticket-data.json`)
+        const ticketData = await fetch(`${window.location.origin}/ticket-data.json`).then(res => res.json())
         this.$store.commit('references/setTickets', ticketData)
         this.$store.commit('references/setTicketsLoaded', '1')
       } catch(e) {}
