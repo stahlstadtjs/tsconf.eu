@@ -1,6 +1,6 @@
 <template>
   <div class="workshop text-white bg-blue" v-editable="blok">
-    <div class="container mx-auto pt-24">
+    <div class="container mx-auto pt-24 min-80-screen">
       <div class="flex">
         <div class="w-1/3 p-6 hidden sm:block">
           <div class="image-blue">
