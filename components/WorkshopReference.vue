@@ -25,10 +25,12 @@
                   <nuxt-link class="px-3 py-2 mt-4 bg-red text-white focus:bg-blue hover:bg-blue inline-block" :to="$options.filters.url(workshop.full_slug)">Workshop Details</nuxt-link>
                 </div>
 
-                <div class="text-center flex items-center bg-red focus:bg-blue hover:bg-blue text-white">
-                  <a class="block p-6 w-165" :href="workshop.content.link" target="_blank" rel="noopener noreferrer">
-                    <span class="text-white whitespace-pre font-semibold text-3xl uppercase">{{workshop.content.price}}</span>
-                    <span class="text-white text-1xl uppercase">incl. 20% VAT</span>
+                <div class="text-center flex items-stretch bg-red focus:bg-blue hover:bg-blue text-white">
+                  <a class="flex items-center block p-6 w-165" :href="workshop.content.link" target="_blank" rel="noopener noreferrer">
+                    <div>
+                      <span class="text-white whitespace-pre font-semibold text-3xl uppercase">{{workshop.content.price}}</span>
+                      <span class="text-white text-1xl uppercase">incl. 20% VAT</span>
+                    </div>
                   </a>
                 </div>
               </div>
