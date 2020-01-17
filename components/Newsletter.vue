@@ -7,7 +7,7 @@
         <div class="flex flex-wrap">
           <div class="w-full md:w-1/2">
             <p class="text-blue font-semibold text-3xl">{{blok.description}}</p>
-            <p class="text-red font-semibold text-3xl">{{blok.disclaimer}}</p>
+            <p class="subheadline">{{blok.disclaimer}}</p>
           </div>
           <div class="w-full md:w-1/2">
             <form class="w-full" :action="$options.filters.url(blok.cta_link)" method="post" name="mc-embedded-subscribe-form" target="_blank">

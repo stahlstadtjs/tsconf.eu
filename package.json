@@ -19,5 +19,8 @@
   "devDependencies": {
     "@nuxt/typescript-build": "^0.5.1",
     "@nuxtjs/tailwindcss": "^1.2.0"
+  },
+  "engines": { 
+    "node": "12.x" 
   }
 }

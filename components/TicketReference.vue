@@ -1,12 +1,12 @@
 <template>
   <div class="ticket-reference" v-editable="blok">
     <div class="container px-8 my-24">
-      <h2 class="text-red uppercase font-bold text-4xl sm:text-5xl lg:text-6xl">{{blok.headline}}</h2>
+      <h2 class="headline">{{blok.headline}}</h2>
       <ul class="hidden md:block">
         <li v-for="ticket in tickets" :key="ticket.slug">
           <div class="flex mt-6" :class="{'opacity-50': ticket.sold_out}">
             <div class="bg-light-gray p-6">
-              <h3 class="text-red uppercase font-semibold text-3xl leading-none w-165" v-html="breakEachWord(ticket.title)"></h3>
+              <h3 class="text-red uppercase font-semibold text-3xl leading-none w-165" v-html="$options.filters.breakEachWord(ticket.title + ' ticket')"></h3>
             </div>
             <div class="flex-grow text-blue bg-light-gray p-6">
               <div v-html="$md.render(ticket.description)"></div>
@@ -60,13 +60,8 @@ export default {
   computed: {
     tickets() {
       return this.$store.state.references.tickets
+        .filter(ticket => !ticket.title.toLowerCase().includes('workshop'))
     }
-  },
-  methods: {
-   breakEachWord(string) {
-     string = string + ' ticket'
-     return string.replace(/ /g, '<br>')
-   } 
   }
 }
 </script>

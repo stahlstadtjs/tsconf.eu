@@ -3,6 +3,7 @@ import Vue from 'vue'
 // Content Types
 import Page from '@/components/content-types/Page.vue'
 import Speaker from '@/components/content-types/Speaker.vue'
+import Workshop from '@/components/content-types/Workshop.vue'
 
 // Single Use and Layout Components
 import MainFooter from '@/components/MainFooter.vue'
@@ -23,15 +24,22 @@ import SensationTeaser from '@/components/SensationTeaser.vue'
 // Reference Components
 import NightlifeReference from '@/components/NightlifeReference.vue'
 import SightseeingReference from '@/components/SightseeingReference.vue'
-import SpeakerReference from '@/components/SpeakerReference.vue'
+import WorkshopReference from '@/components/WorkshopReference.vue'
+import TalkReference from '@/components/TalkReference.vue'
 import SponsorReference from '@/components/SponsorReference.vue'
 import TicketReference from '@/components/TicketReference.vue'
+
+// Art Elements
+import RedLines from '@/components/art-elements/RedLines.vue'
+
 
 /* Map components to names in Storyblok */
 // TODO: Use webpack require.context to import automatically
 
 Vue.component('page', Page)
 Vue.component('speaker', Speaker)
+Vue.component('workshop', Workshop)
+
 
 // Single Use and Layout Components
 Vue.component('main-footer', MainFooter)
@@ -52,6 +60,7 @@ Vue.component('sensation-teaser', SensationTeaser)
 // Reference Components
 Vue.component('nightlife-reference', NightlifeReference)
 Vue.component('sightseeing-reference', SightseeingReference)
-Vue.component('speaker-reference', SpeakerReference)
+Vue.component('workshop-reference', WorkshopReference)
+Vue.component('talk-reference', TalkReference)
 Vue.component('sponsor-reference', SponsorReference)
 Vue.component('ticket-reference', TicketReference)
