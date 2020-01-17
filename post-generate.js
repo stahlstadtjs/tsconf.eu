@@ -1,5 +1,5 @@
 const { download, parseTickets } = require('./download')
-const { promises: fs } = require('fs')
+const fs = require('fs')
 
 download().then(data => {
   const titoTickets = parseTickets(data)
