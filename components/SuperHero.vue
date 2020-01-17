@@ -3,7 +3,7 @@
     <div class="container pt-12 lg:pb-32 lg:pt-32 lg:px-8">
       <div class="flex flex-wrap">
         <div class="lg:w-1/2 px-8">
-          <h1 class="headline leading-tight mb-5">{{blok.headline}}</h1>
+          <h1 class="headline leading-tight mb-5 sm:text-5xl lg:text-6xl">{{blok.headline}}</h1>
           <p v-for="line in info" :key="line" class="text-blue font-bold text-2xl">{{line}}</p>
           <a :href="$options.filters.url(blok.cta_link)" target="_blank" rel="noopener noreferrer" class="inline-block py-2 px-3 mt-6 bg-red text-white focus:bg-blue hover:bg-blue">{{blok.cta_text}}</a>
         </div>
