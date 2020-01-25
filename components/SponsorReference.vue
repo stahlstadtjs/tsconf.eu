@@ -12,6 +12,8 @@
           </a>
         </li>
       </ul>
+      
+      <div class="mt-10"><a href="https://forms.gle/PQFHe6UX9Yb6Wz2j7" target="_blank" title="Become a partner" class="py-2 px-3 mt-4 bg-red text-white focus:bg-blue hover:bg-blue inline-block">Become a partner</a></div>
 
       <div class="flex flex-wrap mt-24">
         <div class="w-full md:w-1/2">
@@ -48,8 +50,21 @@
                 </a>
               </li>
             </ul>  
-          </template>  
+          </template>   
         </div>
+        
+        <template v-if="otherSponsors.length > 0">
+          <div class="w-full">
+              <h3 class="text-red font-semibold text-1xl mb-3">Community & Friends</h3>
+              <ul class="flex flex-wrap">
+                <li class="mr-6 pt-4" v-for="sponsor in otherSponsors" :key="sponsor.uuid" v-editable="sponsor.content">
+                  <a class="block" :href="$options.filters.url(sponsor.content.link)">
+                    <img loading="lazy" :src="$options.filters.transformImage(sponsor.content.logo, 'fit-in/100x60/filters:fill(FFFFFF)')" :alt="sponsor.name">
+                  </a>
+                </li>
+              </ul>  
+          </div>
+        </template>
       </div>
 
     </div>
