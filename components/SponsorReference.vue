@@ -50,8 +50,21 @@
                 </a>
               </li>
             </ul>  
-          </template>  
+          </template>   
         </div>
+        
+        <template v-if="otherSponsors.length > 0">
+          <div class="w-full">
+              <h3 class="text-red font-semibold text-1xl mb-3">Community & Friends</h3>
+              <ul class="flex">
+                <li class="w-1/4 mr-6" v-for="sponsor in otherSponsors" :key="sponsor.uuid" v-editable="sponsor.content">
+                  <a class="block p-6" :href="$options.filters.url(sponsor.content.link)">
+                    <img loading="lazy" :src="$options.filters.transformImage(sponsor.content.logo, 'fit-in/144x80/filters:fill(FFFFFF)')" :alt="sponsor.name">
+                  </a>
+                </li>
+              </ul>  
+          </div>
+        </template>
       </div>
 
     </div>

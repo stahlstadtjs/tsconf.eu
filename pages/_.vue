@@ -70,7 +70,7 @@ export default {
         context.app.$storyapi.get(`cdn/stories/settings`, { resolve_links:'url', version: version }),
         context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'talks/', resolve_links:'url', resolve_relations:'talk.speakers', filter_query: { component: { in: 'talk' }}, version: version }),
         context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'workshops/', resolve_links:'url', resolve_relations:'workshop.speakers', filter_query: { component: { in: 'workshop' }}, version: version }),
-        context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'sponsors/', resolve_links:'url', version: version }),
+        context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'sponsors/', resolve_links:'url', version: version, per_page: 50 }),
         context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'nightlife/', resolve_links:'url', version: version }),
         context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'sightseeing/', resolve_links:'url', version: version }),
       ])
