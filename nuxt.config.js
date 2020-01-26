@@ -115,23 +115,27 @@ export default {
               }
             })
           
-          // other routes that are not in Storyblok with their slug.
+          let payload = {
+            tickets: titoTickets
+          }
+          
+          // add routes manually or use the Links API of Storyblok to load all of them.
           let routes = [
-            { route: '/', payload: { tickets: titoTickets } },
-            { route: '/code-of-conduct', payload: {} },
-            { route: '/faq', payload: {} },
-            { route: '/legal-notice', payload: {} },
-            { route: '/venue', payload: {} },
-            { route: '/workshops', payload: {} },
-            { route: '/workshops/advanced-black-magic-with-typescript', payload: {} },
-            { route: '/workshops/tdd-with-typescript', payload: {} },
-            { route: '/speakers', payload: {} },
-            { route: '/speakers/anders-hejlsberg', payload: {} },
-            { route: '/speakers/liliana-kastilio', payload: {} },
-            { route: '/speakers/bert-belder', payload: {} },
-            { route: '/speakers/peter-kroener', payload: {} },
-            { route: '/speakers/david-tanzer', payload: {} },
-          ] // adds / directly
+            { route: '/', payload },
+            { route: '/code-of-conduct', payload },
+            { route: '/faq', payload },
+            { route: '/legal-notice', payload },
+            { route: '/venue', payload },
+            { route: '/workshops', payload },
+            { route: '/workshops/advanced-black-magic-with-typescript', payload },
+            { route: '/workshops/tdd-with-typescript', payload },
+            { route: '/speakers', payload },
+            { route: '/speakers/anders-hejlsberg', payload },
+            { route: '/speakers/liliana-kastilio', payload },
+            { route: '/speakers/bert-belder', payload },
+            { route: '/speakers/peter-kroener', payload },
+            { route: '/speakers/david-tanzer', payload },
+          ]
           // speakers, schedule, social
           callback(null, routes)
         } catch(e) {
