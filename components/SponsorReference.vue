@@ -16,18 +16,18 @@
       <div class="mt-10"><a href="https://forms.gle/PQFHe6UX9Yb6Wz2j7" target="_blank" title="Become a partner" class="py-2 px-3 mt-4 bg-red text-white focus:bg-blue hover:bg-blue inline-block">Become a partner</a></div>
 
       <div class="flex flex-wrap mt-24">
-        <div class="w-full md:w-1/2">
-          <template v-if="goldSponsors.length > 0">
-            <h3 class="text-red font-semibold text-1xl mb-3">Gold Sponsor</h3>
-            <ul class="flex">
-              <li class="w-1/3 mr-6" v-for="sponsor in goldSponsors" :key="sponsor.uuid" v-editable="sponsor.content">
-                <a class="block shadow-lg focus:shadow-xl hover:shadow-xl p-6" :href="$options.filters.url(sponsor.content.link)">
-                  <img loading="lazy" :src="$options.filters.transformImage(sponsor.content.logo, 'fit-in/144x80/filters:fill(FFFFFF)')" :alt="sponsor.name">
-                </a>
-              </li>
-            </ul>
-          </template>
-        </div>
+        <template v-if="goldSponsors.length > 0">
+          <div class="w-full md:w-1/2">
+              <h3 class="text-red font-semibold text-1xl mb-3">Gold Sponsor</h3>
+              <ul class="flex">
+                <li class="w-1/3 mr-6" v-for="sponsor in goldSponsors" :key="sponsor.uuid" v-editable="sponsor.content">
+                  <a class="block shadow-lg focus:shadow-xl hover:shadow-xl p-6" :href="$options.filters.url(sponsor.content.link)">
+                    <img loading="lazy" :src="$options.filters.transformImage(sponsor.content.logo, 'fit-in/144x80/filters:fill(FFFFFF)')" :alt="sponsor.name">
+                  </a>
+                </li>
+              </ul>
+          </div>
+        </template>
 
         <div class="w-full md:w-1/2">
           <template v-if="silverSponsors.length > 0">
