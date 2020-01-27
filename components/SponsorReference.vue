@@ -12,8 +12,6 @@
           </a>
         </li>
       </ul>
-      
-      <div class="mt-10"><a href="https://forms.gle/PQFHe6UX9Yb6Wz2j7" target="_blank" title="Become a partner" class="py-2 px-3 mt-4 bg-red text-white focus:bg-blue hover:bg-blue inline-block">Become a partner</a></div>
 
       <div class="flex flex-wrap mt-24">
         <template v-if="goldSponsors.length > 0">
@@ -53,6 +51,8 @@
           </template>   
         </div>
         
+        <div class="mt-10"><a href="https://forms.gle/PQFHe6UX9Yb6Wz2j7" target="_blank" title="Become a partner" class="py-2 px-3 mt-4 bg-red text-white focus:bg-blue hover:bg-blue inline-block">Become a partner</a></div>
+
         <template v-if="otherSponsors.length > 0">
           <div class="w-full">
               <h3 class="text-red font-semibold text-1xl mb-3">Community & Friends</h3>
