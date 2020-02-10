@@ -14,10 +14,10 @@ export default {
       { name: "msapplication-TileColor", content: "#ffffff"},
       { name: "msapplication-TileImage", content: "/images/ms-icon-144x144.png" },
       { name: "theme-color", content: "#ffffff" },
-      { property: "og:image", content: "https://tsconf.eu/static/twittercard-ad.jpg" },
+      { property: "og:image", content: "https://tsconf.eu/images/twittercard-ad.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "TSConf:EU - A TypeScript conference for Europe" },
-      { name: "twitter:image", content: "https://tsconf.eu/static/twittercard-ad.jpg" },
+      { name: "twitter:image", content: "https://tsconf.eu/images/twittercard-ad.jpg" },
       { name: "twitter:creator", content: "@tsconfeu" },
     ],
     link: [
