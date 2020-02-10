@@ -13,7 +13,12 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
       { name: "msapplication-TileColor", content: "#ffffff"},
       { name: "msapplication-TileImage", content: "/images/ms-icon-144x144.png" },
-      { name: "theme-color", content: "#ffffff" }
+      { name: "theme-color", content: "#ffffff" },
+      { property: "og:image", content: "https://tsconf.eu/images/twittercard-ad.jpg" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "TSConf:EU - A TypeScript conference for Europe" },
+      { name: "twitter:image", content: "https://tsconf.eu/images/twittercard-ad.jpg" },
+      { name: "twitter:creator", content: "@tsconfeu" },
     ],
     link: [
       { rel: "manifest", href: "/manifest.json" },
