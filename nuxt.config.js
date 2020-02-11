@@ -132,7 +132,7 @@ export default {
             { route: '/legal-notice', payload },
             { route: '/venue', payload },
             { route: '/workshops', payload },
-            { route: '/workshops/advanced-black-magic-with-typescript', payload },
+            { route: '/workshops/advanced-type-level-programming-in-typescript', payload },
             { route: '/workshops/tdd-with-typescript', payload },
             { route: '/speakers/anders-hejlsberg', payload },
             { route: '/speakers/liliana-kastilio', payload },
