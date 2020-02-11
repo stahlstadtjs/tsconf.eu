@@ -142,6 +142,7 @@ export default {
             { route: '/speakers/david-tanzer', payload },
             { route: '/speakers/max-heiber', payload },
             { route: '/speakers/nathalia-rus', payload },
+            { route: '/speakers/natalie-marleny', payload },
           ]
           // speakers, schedule, social
           callback(null, routes)
