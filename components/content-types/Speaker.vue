@@ -11,9 +11,12 @@
         <div class="w-full lg:w-3/5 lg:pt-20 pl-6 pr-12 bg-blue z-10">
           <h1 class="headline">{{blok.name}}</h1>
           <h2 class="text-white pb-6">{{blok.tag}}</h2>
-          <p class="text-3xl">{{blok.bio}}</p>
+          <p class="text-2xl mb-6">{{blok.bio}}</p>
 
-          <a :href="settings.tito_overview_link" class="px-6 py-4 mt-4 bg-red text-white text-center focus:bg-white hover:bg-white focus:text-blue hover:text-blue inline-block">Get a Ticket: Experience {{blok.name}} on stage</a>
+          <a :href="settings.tito_overview_link" class="px-6 py-4 bg-red text-white text-center focus:bg-white hover:bg-white focus:text-blue hover:text-blue inline-block">Get a Ticket</a>
+          
+          <h3 class="mt-6 subheadline"><span class="text-white">Talk: </span>{{talk.content.title}}</h3>
+          <div class="md mt-4" v-html="$md.render(talk.content.markdown)"></div>
 
           <ul class="flex mt-12">
             <li v-if="blok.twitter">
@@ -50,6 +53,11 @@ export default {
   computed: {
     settings() {
       return this.$store.state.references.settings
+    },
+    talk() {
+      return this.$store.state.references.talks.find((talk) => {
+        return `/${talk.content.speakers[0].full_slug}` === this.$nuxt.$router.currentRoute.path
+      })
     }
   }
 }
