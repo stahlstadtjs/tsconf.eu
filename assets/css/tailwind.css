@@ -125,3 +125,7 @@
 #navigation .nuxt-link-exact-active {
   @apply italic underline opacity-25;
 }
+
+.md p + p {
+  @apply mt-2;
+}
