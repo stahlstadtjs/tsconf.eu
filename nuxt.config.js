@@ -86,29 +86,6 @@ export default {
   */
   generate: {
     routes: function (callback) {
-      const payload = {}
-      let routes = [
-        { route: '/', payload },
-        { route: '/code-of-conduct', payload },
-        { route: '/faq', payload },
-        { route: '/legal-notice', payload },
-        { route: '/venue', payload },
-        { route: '/workshops', payload },
-        { route: '/workshops/advanced-type-level-programming-in-typescript', payload },
-        { route: '/workshops/tdd-with-typescript', payload },
-        { route: '/speakers', payload },
-        { route: '/speakers/anders-hejlsberg', payload },
-        { route: '/speakers/liliana-kastilio', payload },
-        { route: '/speakers/bert-belder', payload },
-        { route: '/speakers/max-heiber', payload },
-        { route: '/speakers/nathalia-rus', payload },
-        { route: '/speakers/natalie-marleny', payload },
-        { route: '/speakers/peter-kroener', payload },
-        { route: '/speakers/david-tanzer', payload },
-      ]
-      // speakers, schedule, social
-      callback(null, routes)
-      return
       const token = `z7JV5HUxpNV10rvNaQ5n3Att`
       const version = 'published'
       let cache_version = 0
