@@ -134,15 +134,15 @@ export default {
             { route: '/workshops', payload },
             { route: '/workshops/advanced-black-magic-with-typescript', payload },
             { route: '/workshops/tdd-with-typescript', payload },
-            { route: '/speakers', payload },
-            { route: '/speakers/peter-kroener', payload },
-            { route: '/speakers/david-tanzer', payload },
             { route: '/speakers/anders-hejlsberg', payload },
             { route: '/speakers/liliana-kastilio', payload },
             { route: '/speakers/bert-belder', payload },
             { route: '/speakers/max-heiber', payload },
             { route: '/speakers/nathalia-rus', payload },
             { route: '/speakers/natalie-marleny', payload },
+            { route: '/speakers/peter-kroener', payload },
+            { route: '/speakers/david-tanzer', payload },
+            { route: '/speakers', payload },
           ]
           // speakers, schedule, social
           callback(null, routes)
