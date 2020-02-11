@@ -140,6 +140,8 @@ export default {
             { route: '/speakers/bert-belder', payload },
             { route: '/speakers/peter-kroener', payload },
             { route: '/speakers/david-tanzer', payload },
+            { route: '/speakers/max-heiber', payload },
+            { route: '/speakers/nathalia-rus', payload },
           ]
           // speakers, schedule, social
           callback(null, routes)
