@@ -15,10 +15,7 @@
 
           <a :href="settings.tito_overview_link" class="px-6 py-4 bg-red text-white text-center focus:bg-white hover:bg-white focus:text-blue hover:text-blue inline-block">Get a Ticket</a>
           
-          <template v-if="talk">
-            <h3 class="mt-6 subheadline"><span class="text-white">Talk: </span>{{talk.content.title}}</h3>
-            <div class="md mt-4" v-html="$md.render(talk.content.markdown)"></div>
-          </template>
+          
 
           <ul class="flex mt-12">
             <li v-if="blok.twitter">
