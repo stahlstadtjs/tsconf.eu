@@ -98,6 +98,32 @@ export default {
         return left
       }
 
+      let payload = {}
+
+      let routes = [
+        { route: '/', payload },
+        { route: '/code-of-conduct', payload },
+        { route: '/faq', payload },
+        { route: '/legal-notice', payload },
+        { route: '/venue', payload },
+        { route: '/workshops', payload },
+        { route: '/workshops/advanced-black-magic-with-typescript', payload },
+        { route: '/workshops/tdd-with-typescript', payload },
+        { route: '/speakers', payload },
+        { route: '/speakers/anders-hejlsberg', payload },
+        { route: '/speakers/liliana-kastilio', payload },
+        { route: '/speakers/bert-belder', payload },
+        { route: '/speakers/peter-kroener', payload },
+        { route: '/speakers/david-tanzer', payload },
+        { route: '/speakers/max-heiber', payload },
+        { route: '/speakers/nathalia-rus', payload },
+        { route: '/speakers/natalie-marleny', payload },
+      ]
+      // speakers, schedule, social
+      callback(null, routes)
+
+      return
+
       axios.get('https://api.tito.io/v3/scriptconf/tsconf-eu-2020/', {
         headers: {
           'Authorization': `Token token=${process.env.TITO_TOKEN}`,

@@ -15,7 +15,7 @@
 
           <a :href="settings.tito_overview_link" class="px-6 py-4 bg-red text-white text-center focus:bg-white hover:bg-white focus:text-blue hover:text-blue inline-block">Get a Ticket</a>
           
-          
+          <div hidden>{{talk.name}}</div>
 
           <ul class="flex mt-12">
             <li v-if="blok.twitter">
@@ -55,6 +55,7 @@ export default {
     },
     talk() {
       return this.$store.state.references.talks.find((talk) => {
+        console.log(talk.content.speakers[0].full_slug, this.$nuxt.$router.currentRoute.path)
         return `/${talk.content.speakers[0].full_slug}` === this.$nuxt.$router.currentRoute.path
       })
     }
