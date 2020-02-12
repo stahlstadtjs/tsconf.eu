@@ -14,7 +14,8 @@ module.exports = {
       white: '#fff',
       blue: '#133179',
       red: '#fe272d',
-      'light-gray': '#f3f4f8'
+      'light-gray': '#f3f4f8',
+      'dark-gray': '#d8d8d8'
     },
     inset: {
       '0': 0,

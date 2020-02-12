@@ -131,6 +131,7 @@ export default {
             { route: '/faq', payload },
             { route: '/legal-notice', payload },
             { route: '/venue', payload },
+            { route: '/schedule', payload },
             { route: '/workshops', payload },
             { route: '/workshops/advanced-type-level-programming-in-typescript', payload },
             { route: '/workshops/tdd-with-typescript', payload },
