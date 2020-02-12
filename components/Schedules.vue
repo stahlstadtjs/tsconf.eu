@@ -3,7 +3,7 @@
     <div class="container px-8 pt-12 pb-24">
       <div class="flex">
         
-        <div class="w-1/2 schedule" v-for="(schedule, index) in blok.schedules" :key="schedule._uid" v-editable="schedule">
+        <div class="md:w-1/2 schedule" v-for="(schedule, index) in blok.schedules" :key="schedule._uid" v-editable="schedule">
           <h3>
             <span class="text-blue font-bold text-3xl uppercase block">
               {{schedule.headline}}
