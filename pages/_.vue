@@ -85,7 +85,6 @@ export default {
       if (context.payload && context.payload.tickets) {
         context.store.commit('references/setTickets', context.payload.tickets)      
       }
-
       context.store.commit('references/setLoaded', '1')
     }
   },
@@ -94,7 +93,7 @@ export default {
     const fullSlug = (context.route.path == '/' || context.route.path == '') ? 'home' : context.route.path 
 
     let pageRes = await context.app.$storyapi.get(`cdn/stories/${fullSlug}`, { resolve_links:'url', resolve_relations:'workshop.speakers', version: version })
-
+    pageRes.data.story.content = { ... pageRes.data.story.content, fullSlug }
     return {
        story: pageRes.data.story
     }
