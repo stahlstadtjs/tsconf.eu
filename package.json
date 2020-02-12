@@ -13,14 +13,14 @@
   },
   "dependencies": {
     "@nuxtjs/markdownit": "^1.2.7",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.11.0",
     "storyblok-nuxt": "^1.0.2"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.5.1",
     "@nuxtjs/tailwindcss": "^1.2.0"
   },
-  "engines": { 
-    "node": "12.x" 
+  "engines": {
+    "node": "12.x"
   }
 }

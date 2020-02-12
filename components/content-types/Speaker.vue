@@ -58,7 +58,7 @@ export default {
     },
     talk() {
       return this.$store.state.references.talks.find((talk) => {
-        return `/${talk.content.speakers[0].full_slug}` === this.$nuxt.$router.currentRoute.path
+        return `/${talk.content.speakers[0].full_slug}` === this.blok.fullSlug
       })
     }
   },
