@@ -99,6 +99,7 @@
 }
 .image-blue:hover:after {
   @apply bg-red;
+  mix-blend-mode: overlay;
 }
 
 
