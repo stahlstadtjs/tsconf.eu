@@ -37,6 +37,8 @@
             </li>
           </ul>
 
+          <img class="hidden lg:block pt-48 pl-24" v-if="schedule.illustration" :src="schedule.illustration" alt="Schedule Illustration - Stilelement">
+
         </div>
       </div>
     </div>
