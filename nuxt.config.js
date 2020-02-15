@@ -145,6 +145,7 @@ export default {
             { route: '/speakers/peter-kroener', payload },
             { route: '/speakers/david-tanzer', payload },
             { route: '/speakers/johannes-rieken', payload },
+            { route: '/speakers/fred-k-schott', payload },
           ]
           // speakers, schedule, social
           callback(null, routes)

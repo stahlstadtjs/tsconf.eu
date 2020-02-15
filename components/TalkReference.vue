@@ -18,15 +18,6 @@
                 <p class="pt-4 text-blue text-lg">{{speaker.content.tag}}</p>
               </nuxt-link>
             </li>
-            <li class="w-full sm:w-1/2">
-              <div class="px-10 lg:px-0 lg:pl-20 pb-12">
-                <div class="image-blue">
-                  <img class="rounded-full" loading="lazy" :src="$options.filters.transformImage('//a.storyblok.com/f/71805/400x400/64d7c33394/huh.png', '400x400/filters:grayscale()/')" alt="More speakers coming up">
-                </div>
-                <h3 class="relative text-red font-semibold uppercase text-3xl -mt-24 p-4 leading-none bg-white inline-block">To be announced</h3>
-                <p class="pt-4 text-blue text-lg">More speakers coming up!</p>
-              </div>
-            </li>
           </ul>
         </div>
       </div>
