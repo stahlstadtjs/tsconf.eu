@@ -102,6 +102,20 @@
   mix-blend-mode: overlay;
 }
 
+.ib {
+  @apply relative;
+}
+.ib:after {
+  content: '';
+  mix-blend-mode: color;
+  transition: all 0.4s ease;
+  @apply absolute top-0 left-0 bottom-0 right-0 bg-blue;
+}
+.ib:hover:after {
+  @apply bg-red;
+  mix-blend-mode: overlay;
+}
+
 
 /**
 * Menu Icon SVG animation
