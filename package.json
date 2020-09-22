@@ -19,7 +19,8 @@
   "devDependencies": {
     "@nuxt/typescript-build": "^0.5.1",
     "@nuxtjs/tailwindcss": "^1.2.0",
-    "serialize-javascript": ">=3.1.0"
+    "serialize-javascript": ">=3.1.0",
+    "dot-prop": ">=4.2.1"
   },
   "engines": {
     "node": "12.x"
