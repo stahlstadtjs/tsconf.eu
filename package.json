@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "@nuxtjs/markdownit": "^1.2.7",
-    "nuxt": "^2.11.0",
+    "nuxt": "^2.14.7",
+    "serialize-javascript": "^3.1.0",
     "storyblok-nuxt": "^1.0.2"
   },
   "devDependencies": {
