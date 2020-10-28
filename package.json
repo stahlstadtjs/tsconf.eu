@@ -12,12 +12,15 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxt/types": "^2.14.7",
     "@nuxtjs/markdownit": "^1.2.7",
-    "nuxt": "^2.11.0",
-    "storyblok-nuxt": "^1.0.2"
+    "nuxt": "^2.14.7",
+    "serialize-javascript": "^3.1.0",
+    "storyblok-nuxt": "^1.0.2",
+    "typescript": "^4.0.5"
   },
   "devDependencies": {
-    "@nuxt/typescript-build": "^0.5.1",
+    "@nuxt/typescript-build": "^0.5.8",
     "@nuxtjs/tailwindcss": "^1.2.0",
     "serialize-javascript": ">=3.1.0",
     "dot-prop": ">=4.2.1"
