@@ -25,7 +25,8 @@
     "@nuxt/typescript-build": "^0.5.8",
     "@nuxtjs/tailwindcss": "^1.2.0",
     "serialize-javascript": ">=3.1.0",
-    "dot-prop": ">=4.2.1"
+    "dot-prop": ">=4.2.1",
+    "ssri": ">=8.0.1"
   },
   "engines": {
     "node": "12.x"
