@@ -14,22 +14,23 @@
   "dependencies": {
     "@nuxt/types": "^2.14.7",
     "@nuxtjs/markdownit": "^1.2.7",
-    "nuxt": "^2.14.7",
-    "serialize-javascript": "^3.1.0",
-    "storyblok-nuxt": "^1.0.2",
     "axios": ">=0.21.1",
     "highlight.js": ">=10.4.1",
+    "nuxt": "^2.14.7",
+    "serialize-javascript": "^3.1.0",
+    "storyblok-nuxt": "^2.0.1",
     "typescript": "^4.0.5"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.5.8",
-    "@nuxtjs/tailwindcss": "^1.2.0",
-    "serialize-javascript": ">=3.1.0",
+    "@nuxtjs/tailwindcss": "^4.2.1",
     "dot-prop": ">=4.2.1",
+    "is-svg": ">=4.2.2",
+    "serialize-javascript": ">=3.1.0",
     "ssri": ">=8.0.1",
-    "is-svg": ">=4.2.2"
+    "watchpack": "^2.2.0"
   },
   "engines": {
-    "node": "12.x"
+    "node": "14.x"
   }
 }
