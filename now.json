@@ -4,16 +4,20 @@
     {
       "src": "nuxt.config.js",
       "use": "@nuxtjs/now-builder",
-      "config": {}
+      "config": {
+        "headers": [
+          {
+            "source": "(.*)",
+            "headers": [
+              {
+                "key": "Content-Security-Policy",
+                "value": "frame-ancestors http://app.storyblok.com https://app.storyblok.com;"
+              }
+            ]
+          }
+        ]
+      }
     }
   ],
-  "headers": [
-    {
-      "source": "(.*)",
-      "headers": [{
-        "key": "Content-Security-Policy",
-        "value": "frame-ancestors http://app.storyblok.com https://app.storyblok.com;"
-      }]
-    }
-  ]
+  
 }
